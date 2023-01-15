@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import esriConfig from '@arcgis/core/config';
+import Map from '@arcgis/core/Map';
+import MapView from '@arcgis/core/views/MapView';
+import { useLayoutEffect } from 'react';
 
-function App() {
+export default function App() {
+
+  useLayoutEffect(() => {
+    esriConfig.apiKey = process.env.REACT_APP_DEFAULT_API_KEY;
+  
+    const map = new Map({
+      basemap: 'arcgis-topographic' // Basemap layer service
+    });
+  
+    const view = new MapView({
+      container: 'root',
+      map: map,
+      extent: {
+          xmin: -122.9810734,
+          ymin: 36.2029589,
+          xmax: -118.7068497,
+          ymax: 39.9165496,
+          spatialReference: 4326
+      },
+    });
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='h-screen w-full'></div>
   );
 }
 
-export default App;
+
