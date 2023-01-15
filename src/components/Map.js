@@ -3,6 +3,7 @@ import esriConfig from '@arcgis/core/config';
 import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
+import Renderer from "@arcgis/core/renderers/Renderer";
 // Hooks
 import { useEffect } from 'react';
 
@@ -30,9 +31,20 @@ export default function MainMap() {
       },
     });
 
+    // Define the style of the feature layer
+    const featureStyle = {
+        type: "simple",  
+        symbol: {
+            type: "simple-line",  
+            color: [ 0, 0, 0, 1 ],
+            width: 1.5
+        }
+    }
+
     // Define a feature layer to use
     const feature = new FeatureLayer({
-      url: 'https://services5.arcgis.com/K2yvD247JkyVgWmg/arcgis/rest/services/canyons/FeatureServer/0'
+      url: 'https://services5.arcgis.com/K2yvD247JkyVgWmg/arcgis/rest/services/canyons/FeatureServer/0',
+      renderer: featureStyle
     })
 
     // Add feature to map
