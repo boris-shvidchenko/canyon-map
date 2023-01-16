@@ -28,6 +28,10 @@ export default function MainMap() {
           ymax: 42.19054,
           spatialReference: 4326
       },
+      // Removes the + and - widget from the map
+      ui: {
+        components: ["attribution"]
+      }
     });
 
     // Create a template for popups
@@ -50,17 +54,27 @@ export default function MainMap() {
             color: [ 0, 0, 0, 1 ],
             width: 1.5
         }
-    }
+    };
 
     // Define a feature layer to use
     const feature = new FeatureLayer({
       url: 'https://services5.arcgis.com/K2yvD247JkyVgWmg/arcgis/rest/services/canyons/FeatureServer/0',
       renderer: featureStyle,
       popupTemplate: popupTemplate
-    })
+    });
 
     // Add feature to map
-    map.add(feature, 0)
+    map.add(feature, 0);
+
+    // Customize the popup
+    view.popup = {
+        dockOptions: {
+            buttonEnabled: false
+        },
+        viewModel: {
+            includeDefaultActions: false,
+        }
+    };
 
   }, [])
 
