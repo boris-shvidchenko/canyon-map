@@ -3,7 +3,6 @@ import esriConfig from '@arcgis/core/config';
 import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
-import Renderer from "@arcgis/core/renderers/Renderer";
 // Hooks
 import { useEffect } from 'react';
 
@@ -31,6 +30,18 @@ export default function MainMap() {
       },
     });
 
+    // Create a template for popups
+    const popupTemplate = {
+        title: '{Name}',
+        content: [{
+            type: 'fields',
+            fieldInfos: [{
+                fieldName: 'Rating',
+                label: 'Rating'
+            }]
+        }]
+    };
+
     // Define the style of the feature layer
     const featureStyle = {
         type: "simple",  
@@ -44,7 +55,8 @@ export default function MainMap() {
     // Define a feature layer to use
     const feature = new FeatureLayer({
       url: 'https://services5.arcgis.com/K2yvD247JkyVgWmg/arcgis/rest/services/canyons/FeatureServer/0',
-      renderer: featureStyle
+      renderer: featureStyle,
+      popupTemplate: popupTemplate
     })
 
     // Add feature to map
