@@ -20,33 +20,33 @@ export default function MainMap() {
     });
   
     // Create a new map view to hold/display the map
-    // const view = new MapView({
-    //   container: 'root',
-    //   map: map,
-    //   extent: {
-    //       xmin: -108.149414,
-    //       ymin: 36.450743,
-    //       xmax: -115.092773,
-    //       ymax: 42.19054,
-    //       spatialReference: 4326
-    //   },
-    //   // Removes the + and - widget from the map
-    //   ui: {
-    //     components: ["attribution"]
-    //   }
-    // });
+    const view = new MapView({
+      container: 'root',
+      map: map,
+      extent: {
+          xmin: -108.149414,
+          ymin: 36.450743,
+          xmax: -115.092773,
+          ymax: 42.19054,
+          spatialReference: 4326
+      },
+      // Removes the + and - widget from the map
+      ui: {
+        components: ["attribution"]
+      }
+    });
 
-    const view3D = new SceneView({
-        container: 'root',
-        map: map,
-        camera: {
-            position: {
-                x: -111.513936,
-                y: 39.133887,
-                z: 2000000
-            }
-        }
-    })
+    // const view3D = new SceneView({
+    //     container: 'root',
+    //     map: map,
+    //     camera: {
+    //         position: {
+    //             x: -111.513936,
+    //             y: 39.133887,
+    //             z: 2000000
+    //         }
+    //     }
+    // })
 
     // Create a template for popups
     const popupTemplate = {
@@ -81,14 +81,14 @@ export default function MainMap() {
     map.add(feature, 0);
 
     // Customize the popup
-    // view.popup = {
-    //     dockOptions: {
-    //         buttonEnabled: false
-    //     },
-    //     viewModel: {
-    //         includeDefaultActions: false,
-    //     }
-    // };
+    view.popup = {
+        dockOptions: {
+            buttonEnabled: false
+        },
+        viewModel: {
+            includeDefaultActions: false,
+        }
+    };
 
   }, [])
 
