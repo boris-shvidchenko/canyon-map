@@ -91,7 +91,7 @@ export default function MainMap() {
       renderer: featureStyle,
       popupTemplate: popupTemplate
     });
-
+ 
     // Add feature to map
     map.add(feature, 0);
 
