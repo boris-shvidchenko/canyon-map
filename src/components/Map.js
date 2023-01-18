@@ -3,7 +3,8 @@ import esriConfig from '@arcgis/core/config';
 import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import SceneView from '@arcgis/core/views/SceneView';
-import FeatureLayer from "@arcgis/core/layers/FeatureLayer";
+import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
+import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
 // Hooks
 import { useEffect } from 'react';
 
@@ -57,6 +58,11 @@ export default function MainMap() {
     //     }
     // })
 
+    // Define basemaps
+    const basemaps = new BasemapGallery({
+      view: view
+    });
+
     // Create a template for popups
     const popupTemplate = {
         title: '{Name}',
@@ -74,7 +80,7 @@ export default function MainMap() {
         type: "simple",  
         symbol: {
             type: "simple-line",  
-            color: [ 0, 0, 0, 1 ],
+            color: [ 255, 51, 0, 1 ],
             width: 1.5
         }
     };
@@ -91,6 +97,11 @@ export default function MainMap() {
 
     // Customize 3D map widgets
     // view3D.ui.remove(['zoom','navigation-toggle']);
+
+    // Add basemap widget to map
+    view.ui.add(basemaps, {
+      position: 'bottom-left'
+    })
 
     // Customize the (2D map) popup
     view.popup = {
