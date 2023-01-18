@@ -116,6 +116,6 @@ export default function MainMap() {
   }, [])
 
   return (
-    <div className='h-screen w-full'></div>
+    <div className='h-screen w-full'></div> 
   );
 }
