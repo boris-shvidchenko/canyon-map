@@ -33,6 +33,10 @@ export default function MainMap() {
       // Removes the + and - widget from the map
       ui: {
         components: ["attribution"]
+      },
+      // Disables map rotation with right mouse click
+      constraints: {
+        rotationEnabled: false
       }
     });
 
