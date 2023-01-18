@@ -19,7 +19,7 @@ export default function MainMap() {
       ground: 'world-elevation'
     });
   
-    // Create a new map view to hold/display the map
+    // Create a new 2D map view to hold/display the map
     const view = new MapView({
       container: 'root',
       map: map,
@@ -40,6 +40,7 @@ export default function MainMap() {
       }
     });
 
+    // Create a new 3D map view(scene) to hold/display the map
     // const view3D = new SceneView({
     //     container: 'root',
     //     map: map,
@@ -49,6 +50,10 @@ export default function MainMap() {
     //             y: 39.133887,
     //             z: 2000000
     //         }
+    //     },
+    //     // Removes the + and - widget from the map
+    //     ui: {
+    //       padding: {top: 100, left: 15},
     //     }
     // })
 
@@ -84,7 +89,10 @@ export default function MainMap() {
     // Add feature to map
     map.add(feature, 0);
 
-    // Customize the popup
+    // Customize 3D map widgets
+    // view3D.ui.remove(['zoom','navigation-toggle']);
+
+    // Customize the (2D map) popup
     view.popup = {
         dockOptions: {
             buttonEnabled: false
