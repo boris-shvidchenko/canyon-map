@@ -3,3 +3,47 @@
 @tailwind utilities;
 
 /* Used to edit the basemap container from ESRI */
+.esri-basemap-gallery {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.esri-basemap-gallery__item-container {
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.esri-basemap-gallery__item--selected {
+    border-left: none;
+    background-color: transparent;
+}
+
+.esri-basemap-gallery__item {
+    border: solid 2px black;
+    border-radius: 1rem;
+    position: relative;
+    width: 4.2rem;
+    padding: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.esri-basemap-gallery__item:hover {
+    border: solid 2px red;
+}
+
+.esri-basemap-gallery__item:focus {
+    border: solid 2px red;
+}
+
+.esri-basemap-gallery__item-title {
+    display: none;
+}
+
+.esri-basemap-gallery__item-thumbnail {
+    
+}
+
+.esri-ui-corner .esri-component {
+    box-shadow: none;
+}
