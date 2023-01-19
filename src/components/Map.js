@@ -4,6 +4,7 @@ import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import SceneView from '@arcgis/core/views/SceneView';
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
+import Basemap from "@arcgis/core/Basemap";
 import BasemapGallery from '@arcgis/core/widgets/BasemapGallery'
 // Hooks
 import { useEffect } from 'react';
@@ -60,7 +61,17 @@ export default function MainMap() {
 
     // Define basemaps
     const basemaps = new BasemapGallery({
-      view: view
+      view: view,
+      source: [
+        Basemap.fromId('arcgis-topographic'), 
+        Basemap.fromId('arcgis-imagery'), 
+        Basemap.fromId('arcgis-imagery-standard'), 
+        Basemap.fromId('arcgis-streets-relief'), 
+        Basemap.fromId('arcgis-terrain'), 
+        Basemap.fromId('arcgis-modern-antique'), 
+        Basemap.fromId('osm-standard-relief'), 
+        Basemap.fromId('osm-streets-relief')
+      ]
     });
 
     // Create a template for popups
