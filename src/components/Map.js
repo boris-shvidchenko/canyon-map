@@ -7,9 +7,14 @@ import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
 import Basemap from '@arcgis/core/Basemap';
 import BasemapGallery from '@arcgis/core/widgets/BasemapGallery';
 // Hooks
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
+// Context
+import { Context } from '../App';
 
 export default function MainMap() {
+
+  // Obtain state from context
+  const { state } = useContext(Context);
 
   useEffect(() => {
     // Apply API key to access ArcGIS services
@@ -17,7 +22,7 @@ export default function MainMap() {
   
     // Create a new map
     const map = new Map({
-      basemap: 'arcgis-topographic', 
+      basemap: state.basemap, 
       ground: 'world-elevation'
     });
   
@@ -59,16 +64,6 @@ export default function MainMap() {
     //     }
     // })
 
-    // Define basemaps
-    // const basemaps = new BasemapGallery({
-    //   view: view,
-    //   source: [
-    //     Basemap.fromId('arcgis-topographic'), 
-    //     Basemap.fromId('arcgis-imagery'), 
-    //     Basemap.fromId('arcgis-streets-relief'), 
-    //   ]
-    // });
-
     // Create a template for popups
     const popupTemplate = {
         title: '{Name}',
@@ -104,11 +99,6 @@ export default function MainMap() {
     // Customize 3D map widgets
     // view3D.ui.remove(['zoom','navigation-toggle']);
 
-    // Add basemap widget to map
-    // view.ui.add(basemaps, {
-    //   position: 'bottom-left'
-    // })
-
     // Customize the (2D map) popup
     view.popup = {
         dockOptions: {
@@ -119,7 +109,7 @@ export default function MainMap() {
         }
     };
 
-  }, [])
+  }, [state.basemap])
 
   return (
     <div className='h-screen w-full'></div> 
