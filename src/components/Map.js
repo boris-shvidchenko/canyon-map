@@ -60,14 +60,14 @@ export default function MainMap() {
     // })
 
     // Define basemaps
-    const basemaps = new BasemapGallery({
-      view: view,
-      source: [
-        Basemap.fromId('arcgis-topographic'), 
-        Basemap.fromId('arcgis-imagery'), 
-        Basemap.fromId('arcgis-streets-relief'), 
-      ]
-    });
+    // const basemaps = new BasemapGallery({
+    //   view: view,
+    //   source: [
+    //     Basemap.fromId('arcgis-topographic'), 
+    //     Basemap.fromId('arcgis-imagery'), 
+    //     Basemap.fromId('arcgis-streets-relief'), 
+    //   ]
+    // });
 
     // Create a template for popups
     const popupTemplate = {
@@ -105,9 +105,9 @@ export default function MainMap() {
     // view3D.ui.remove(['zoom','navigation-toggle']);
 
     // Add basemap widget to map
-    view.ui.add(basemaps, {
-      position: 'bottom-left'
-    })
+    // view.ui.add(basemaps, {
+    //   position: 'bottom-left'
+    // })
 
     // Customize the (2D map) popup
     view.popup = {
