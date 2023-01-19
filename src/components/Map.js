@@ -4,8 +4,6 @@ import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import SceneView from '@arcgis/core/views/SceneView';
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
-import Basemap from '@arcgis/core/Basemap';
-import BasemapGallery from '@arcgis/core/widgets/BasemapGallery';
 // Hooks
 import { useContext, useEffect } from 'react';
 // Context
