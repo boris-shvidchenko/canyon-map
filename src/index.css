@@ -11,7 +11,7 @@
 @layer components {
     /* Basemap Container */
     .basemap-container-main-div {
-        @apply w-60 h-20 bg-[#40404080] absolute bottom-7 left-4 flex space-x-2 p-2 rounded-sm
+        @apply w-60 h-20 bg-[#40404080] absolute bottom-8 left-4 flex space-x-2 p-2 rounded-sm
     }
     .basemap-container-section {
         @apply w-1/3 flex flex-col items-center overflow-hidden cursor-pointer
