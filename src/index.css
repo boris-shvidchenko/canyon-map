@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    box-sizing: border-box;
+/* Removes the map outline on focus */
+.esri-view-surface--touch-none::after {
+    transform: scaleX(0);
+    transform: scaleY(0);
 }
