@@ -14,18 +14,18 @@ export default function BasemapContainer() {
     }
 
     return (
-        <div className='w-96 h-32 border border-black p-2 absolute bottom-7 left-4 flex space-x-2'>
-            <section onClick={() => updateBasemap('arcgis-topographic')} className='border border-black w-1/3 flex flex-col items-center overflow-hidden rounded-sm'>
+        <div className='w-60 h-20 border border-[#404040] absolute bottom-7 left-4 flex rounded-sm over'>
+            <section onClick={() => updateBasemap('arcgis-topographic')} className='w-1/3 p-1 bg-[#d97706] flex flex-col items-center overflow-hidden cursor-pointer'>
                 <img className='w-full h-full' src='/images/basemap-thumbnails/topo.png' alt='Topographic' />
-                <p>Topographic</p>
+                {/* <p>Topographic</p> */}
             </section>
-            <section onClick={() => updateBasemap('arcgis-imagery')} className='border border-black w-1/3 flex flex-col items-center overflow-hidden rounded-sm'>
+            <section onClick={() => updateBasemap('arcgis-imagery')} className='w-1/3 p-1 bg-[#404040] flex flex-col items-center overflow-hidden cursor-pointer'>
                 <img className='w-full h-full' src='/images/basemap-thumbnails/imagery.png' alt='Imagery' />
-                <p>Imagery</p>
+                {/* <p>Imagery</p> */}
             </section>
-            <section onClick={() => updateBasemap('arcgis-streets-relief')} className='border border-black w-1/3 flex flex-col items-center overflow-hidden rounded-sm'>
+            <section onClick={() => updateBasemap('arcgis-streets-relief')} className='w-1/3 p-1 bg-[#404040] flex flex-col items-center overflow-hidden cursor-pointer'>
                 <img className='w-full h-full' src='/images/basemap-thumbnails/streets.png' alt='Streets' />
-                <p>Streets</p>
+                {/* <p>Streets</p> */}
             </section>
         </div>
     )
