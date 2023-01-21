@@ -12,7 +12,8 @@ export default function App() {
 
   // Default state store 
   const initialState = {
-    basemap: 'arcgis-topographic'
+    basemap: 'arcgis-topographic',
+    menuIconVisible: true
   }
 
   // Reducer hook setup
@@ -23,6 +24,8 @@ export default function App() {
     switch (action.type) {
       case 'updateBasemap':
         return {...state, basemap: action.basemap}
+      case 'updateMenuIconVisibility':
+        return {...state, menuIconVisible: !state.menuIconVisible}
     }
   }
 
