@@ -8,6 +8,17 @@
     transform: scaleY(0);
 }
 
+/* Changes popup header title color */
+.esri-popup__header-title {
+    color: #ff6a00;
+}
+
+/* Changes the hover color changes on the popup buttons */
+.esri-popup__button:hover {
+    color: rgb(239 68 68);
+    background-color: transparent;
+}
+
 @layer components {
     /* Basemap Container */
     .basemap-container-main-div {

@@ -100,11 +100,13 @@ export default function MainMap() {
     // Customize the (2D map) popup
     view.popup = {
         dockOptions: {
-            buttonEnabled: false
+            buttonEnabled: false,
+            breakpoint: false
         },
         viewModel: {
             includeDefaultActions: false,
-        }
+        },
+        collapseEnabled: false
     };
 
   }, [state.basemap])
