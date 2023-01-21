@@ -5,7 +5,7 @@ import { Context } from '../App'
 // Heroicons
 import { Bars3Icon } from '@heroicons/react/24/solid'
 
-export default function SideMenu() {
+export default function Menu() {
 
     // Obtain state from context
     const { state, dispatch } = useContext(Context);

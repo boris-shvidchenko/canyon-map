@@ -1,7 +1,7 @@
 // Components
 import MainMap from './components/Map';
 import BasemapContainer from './components/BasemapContainer';
-import SideMenu from './components/SideMenu';
+import Menu from './components/Menu';
 // Hooks
 import { createContext, useReducer } from 'react';
 
@@ -32,7 +32,7 @@ export default function App() {
   return (
     <Context.Provider value={{state, dispatch}}>
       <MainMap />
-      <SideMenu />
+      <Menu />
       <BasemapContainer />
     </Context.Provider>
   );
