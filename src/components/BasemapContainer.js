@@ -14,9 +14,9 @@ export default function BasemapContainer() {
     }
 
     // Styles
-    const topoImgStyle = state.basemap === 'arcgis-topographic' ? 'border-2 border-red-500 hover:none' : 'border-2 border-transparent hover:border-[#ff6a00]';
-    const imageryImgStyle = state.basemap === 'arcgis-imagery' ? 'border-2 border-red-500 hover:border-red-500' : 'border-2 border-transparent hover:border-[#ff6a00]';
-    const streetsImgStyle = state.basemap === 'arcgis-streets-relief' ? 'border-2 border-red-500 hover:border-red-500' : 'border-2 border-transparent hover:border-[#ff6a00]';
+    const topoImgStyle = state.basemap === 'arcgis-topographic' ? 'border-2 border-[#ff6a00] hover:none' : 'border-2 border-transparent';
+    const imageryImgStyle = state.basemap === 'arcgis-imagery' ? 'border-2 border-[#ff6a00] hover:none' : 'border-2 border-transparent';
+    const streetsImgStyle = state.basemap === 'arcgis-streets-relief' ? 'border-2 border-[#ff6a00] hover:none' : 'border-2 border-transparent';
 
     return (
         <div className='basemap-container-main-div'>
