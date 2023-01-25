@@ -22,7 +22,7 @@ export default function Menu() {
                 <Bars3Icon onClick={toggleMenu} className='w-9 h-9 cursor-pointer text-white hover:text-[#ff6a00]' />
             </div>
 
-            <div className={`${state.menuIconVisible && 'fixed top-0 -right-96'} ${!state.menuIconVisible && 'fixed top-0 right-0'} duration-100 ease-in-out w-96 h-[39rem] bg-[#404040] z-10 rounded-sm`}>
+            <div className={`${state.menuIconVisible && 'fixed top-0 -right-96'} ${!state.menuIconVisible && 'fixed top-0 right-0'} duration-100 ease-in-out w-96 h-[41.5rem] bg-[#404040] z-10 rounded-sm shadow-lg drop-shadow-md`}>
 
                 {/* Header */}
                 <section className='flex items-center w-full px-8 pb-5 pt-8 bg-[#303030] border-b border-[#8a8a8a]'>
@@ -48,7 +48,14 @@ export default function Menu() {
                     <p className='text-[#cfcfcf] py-1 text-sm font-light'>Want to request a canyon to be added? Found a bug? Have suggestions for improvements? Get in touch!</p>
                 </section>
                 
+                {/* Send message button */}
                 <div className='ml-8 mt-5 px-5 py-2 text-[#ff6a00] border border-[#ff6a00] rounded-sm w-max cursor-pointer hover:outline hover:outline-1'>Send a message</div>
+
+                {/* Site info */}
+                <section className='pt-6 px-8 text-xs text-[#9b9b9b] space-y-1'>
+                    <p>Developed by: Boris Shvidchenko</p>
+                    <p>Last update: 01/25/2023</p>
+                </section>
 
             </div>
             
