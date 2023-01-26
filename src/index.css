@@ -30,4 +30,37 @@
     .basemap-container-map-name {
         @apply absolute -bottom-1 px-1 bg-[#404040] w-[3.85rem] text-center rounded-sm text-white font-semibold text-sm
     }
+    .menu-icon-container {
+        @apply absolute top-6 right-6 bg-[#404040] p-1 rounded-sm
+    }
+    .menu-icon {
+        @apply w-9 h-9 cursor-pointer text-white hover:text-[#ff6a00]
+    }
+    .menu-container {
+        @apply duration-100 ease-in-out w-96 h-[41.5rem] bg-[#404040] z-10 rounded-sm shadow-lg drop-shadow-md
+    }
+    .menu-header-section {
+        @apply flex items-center w-full px-8 pb-5 pt-8 bg-[#303030] border-b border-[#8a8a8a]
+    }
+    .menu-header {
+        @apply text-[#ff6a00] text-xl font-semibold flex-1
+    }
+    .menu-x {
+        @apply w-7 h-7 cursor-pointer text-white hover:text-[#ff6a00]
+    }
+    .menu-text-section{
+        @apply px-8 pt-4
+    }
+    .menu-header {
+        @apply text-[#fff] text-lg
+    }
+    .menu-text {
+        @apply text-[#cfcfcf] py-1 text-sm font-light
+    }
+    .menu-button {
+        @apply ml-8 mt-5 px-5 py-2 text-[#ff6a00] border border-[#ff6a00] rounded-sm w-max cursor-pointer hover:outline hover:outline-1
+    }
+    .menu-info {
+        @apply pt-6 px-8 text-xs text-[#9b9b9b] space-y-1
+    }
 }
