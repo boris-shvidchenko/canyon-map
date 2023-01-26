@@ -2,6 +2,7 @@
 import MainMap from './components/Map';
 import BasemapContainer from './components/BasemapContainer';
 import Menu from './components/Menu';
+import ContactForm from './components/ContactForm';
 // Hooks
 import { createContext, useReducer } from 'react';
 
@@ -13,7 +14,8 @@ export default function App() {
   // Default state store 
   const initialState = {
     basemap: 'arcgis-topographic',
-    menuIconVisible: true
+    menuIconVisible: true,
+    contactFormVisible: false
   }
 
   // Reducer hook setup
@@ -26,6 +28,8 @@ export default function App() {
         return {...state, basemap: action.basemap}
       case 'updateMenuIconVisibility':
         return {...state, menuIconVisible: !state.menuIconVisible}
+      case 'updateContactFormVisibility':
+        return {...state, contactFormVisible: !state.contactFormVisible}
     }
   }
 
@@ -33,6 +37,7 @@ export default function App() {
     <Context.Provider value={{state, dispatch}}>
       <MainMap />
       <Menu />
+      <ContactForm />
       <BasemapContainer />
     </Context.Provider>
   );

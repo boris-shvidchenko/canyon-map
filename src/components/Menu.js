@@ -15,6 +15,11 @@ export default function Menu() {
         dispatch({ type: 'updateMenuIconVisibility' })
     } 
 
+    // Open/close contact form
+    function toggleContact() {
+        dispatch({ type: 'updateContactFormVisibility' })
+    }
+
     return (
         <div>
 
@@ -49,7 +54,7 @@ export default function Menu() {
                 </section>
                 
                 {/* Send message button */}
-                <div className='ml-8 mt-5 px-5 py-2 text-[#ff6a00] border border-[#ff6a00] rounded-sm w-max cursor-pointer hover:outline hover:outline-1'>Send a message</div>
+                <div onClick={toggleContact} className='ml-8 mt-5 px-5 py-2 text-[#ff6a00] border border-[#ff6a00] rounded-sm w-max cursor-pointer hover:outline hover:outline-1'>Send a message</div>
 
                 {/* Site info */}
                 <section className='pt-6 px-8 text-xs text-[#9b9b9b] space-y-1'>
