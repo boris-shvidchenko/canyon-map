@@ -1,6 +1,7 @@
 // Components
 import MainMap from './components/Map';
 import BasemapContainer from './components/BasemapContainer';
+import MapTypeContainer from './components/MapTypeContainer';
 import Menu from './components/Menu';
 import ContactForm from './components/ContactForm';
 // Hooks
@@ -21,7 +22,10 @@ export default function App() {
 
   // Reducer hook setup
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  // Test
   console.log(state.contactFormData)
+
   // Reducer function setup
   function reducer(state, action) {
     switch (action.type) {
@@ -42,6 +46,7 @@ export default function App() {
       <Menu />
       <ContactForm />
       <BasemapContainer />
+      <MapTypeContainer />
     </Context.Provider>
   );
 }

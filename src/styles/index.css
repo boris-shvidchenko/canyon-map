@@ -31,7 +31,7 @@
         @apply absolute -bottom-1 px-1 bg-[#404040] w-[3.85rem] text-center rounded-sm text-white font-semibold text-sm
     }
     .menu-icon-container {
-        @apply absolute top-6 right-6 bg-[#404040] p-1 rounded-sm
+        @apply absolute top-7 right-7 bg-[#404040] p-1 rounded-sm
     }
     .menu-icon {
         @apply w-9 h-9 cursor-pointer text-white hover:text-[#ff6a00]
