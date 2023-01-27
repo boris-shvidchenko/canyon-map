@@ -28,7 +28,7 @@ export default function Menu() {
             <div className={`${state.menuIconVisible && 'fixed top-0 -right-96'} ${!state.menuIconVisible && 'fixed top-0 right-0'} menu-container`}>
                 {/* Header */}
                 <section className='menu-header-section'>
-                    <h1 className='menu-header'>Canyon Map</h1>
+                    <h1 className='menu-main-header'>Canyon Map</h1>
                     <XMarkIcon onClick={toggleMenu} className='menu-x' />
                 </section>
                 {/* About */}

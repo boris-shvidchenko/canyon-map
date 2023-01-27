@@ -15,6 +15,11 @@ export default function ContactForm() {
         dispatch({ type: 'updateContactFormVisibility' })
     }
 
+    // Submit form
+    function submitForm(event) {
+        event.preventDefault();
+    }
+
     return (
         <div>
 
@@ -26,17 +31,35 @@ export default function ContactForm() {
                     <ChevronRightIcon onClick={toggleContact} className='w-7 h-7 cursor-pointer text-white hover:text-[#ff6a00]' />
                 </section>
 
-                {/* About */}
+                {/* Contact */}
                 <section className='px-8 pt-4'>
-                    <h2 className='text-[#fff] text-lg'>About</h2>
-                    <p className='text-[#cfcfcf] py-1 text-sm font-light'>This app attempts to display all known canyoneering routes around the world. Although the end goal is to maintain a map showing all canyons that have known descents, adding routes takes time, and thus some canyons may not be present.</p>
+                    <p className='text-[#cfcfcf] py-1 text-sm font-light'>If you'd like to have a new canyon added please include the name and the rating in the message below. A description of where the canyon is located would be helpful as well (or better yet, attach a map!). Feel free to include an image to use for the preview.</p>
+                    <hr className='border-[#8a8a8a] my-4' />
                 </section>
 
-            
-              
-
+                {/* Form */}
+                <form onSubmit={(e) => submitForm(e)} className='px-8 space-y-3'>
+                    {/* Email address */}
+                    <section className='flex flex-col space-y-1'>
+                        <label htmlFor='email' className='text-[#fff]'>Email <span className='text-[#f72b2b]'>*</span></label>  
+                        <input type='email' id='email' name='email' required className='border-none rounded-sm bg-[#afafaf] py-1 px-2 focus:outline-none text-sm' />
+                    </section>
+                    {/* Message */}
+                    <section className='flex flex-col space-y-1'>
+                        <label htmlFor='message' className='text-[#fff]'>Message <span className='text-[#f72b2b]'>*</span></label>  
+                        <textarea type='message' id='message' name='message' required rows='5'   className='border-none rounded-sm bg-[#afafaf] py-1 px-2 focus:outline-none resize-none scrollbar-thin scrollbar-thumb-[#8a8a8a] text-sm' />
+                    </section>
+                    {/* Attachments */}
+                    <section className='flex flex-col space-y-1'>
+                        <label htmlFor='attachment' className='text-[#fff]'>Attachments (PNG or JPG please)</label>
+                        <input type='file' id='attachment' name='attachment' multiple />
+                    </section>
+                    {/* Submit Button */}
+                    <section>
+                        <button type='submit' className='menu-button ml-0'>Submit</button>
+                    </section>
+                </form>
             </div>
-            
         </div>
     )
 }
