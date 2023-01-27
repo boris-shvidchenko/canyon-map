@@ -38,25 +38,30 @@ export default function ContactForm() {
                 </section>
 
                 {/* Form */}
-                <form onSubmit={(e) => submitForm(e)} className='px-8 space-y-3'>
+                <form onSubmit={(e) => submitForm(e)} className='px-8 space-y-4'>
                     {/* Email address */}
                     <section className='flex flex-col space-y-1'>
-                        <label htmlFor='email' className='text-[#fff]'>Email <span className='text-[#f72b2b]'>*</span></label>  
+                        <label htmlFor='email' className='text-[#fff] text-sm'>Email <span className='text-[#f72b2b]'>*</span></label>  
                         <input type='email' id='email' name='email' required className='border-none rounded-sm bg-[#afafaf] py-1 px-2 focus:outline-none text-sm' />
                     </section>
                     {/* Message */}
                     <section className='flex flex-col space-y-1'>
-                        <label htmlFor='message' className='text-[#fff]'>Message <span className='text-[#f72b2b]'>*</span></label>  
+                        <label htmlFor='message' className='text-[#fff] text-sm'>Message <span className='text-[#f72b2b]'>*</span></label>  
                         <textarea type='message' id='message' name='message' required rows='5'   className='border-none rounded-sm bg-[#afafaf] py-1 px-2 focus:outline-none resize-none scrollbar-thin scrollbar-thumb-[#8a8a8a] text-sm' />
                     </section>
                     {/* Attachments */}
                     <section className='flex flex-col space-y-1'>
-                        <label htmlFor='attachment' className='text-[#fff]'>Attachments (PNG or JPG please)</label>
-                        <input type='file' id='attachment' name='attachment' multiple />
+                        <label htmlFor='attachment' className='text-[#fff] text-sm'>Attachments (PNG or JPG please)
+                        </label>
+                        <input type='file' id='attachment' name='attachment' multiple className='text-[#cfcfcf]' />
+                    </section>
+                    {/* Disclaimer */}
+                    <section className='text-xs text-[#9b9b9b]'>
+                        <p>Please note: By adding images you give permission for them to be used on this website.</p>
                     </section>
                     {/* Submit Button */}
                     <section>
-                        <button type='submit' className='menu-button ml-0'>Submit</button>
+                        <button type='submit' className='menu-button ml-0 mt-0'>Submit</button>
                     </section>
                 </form>
             </div>

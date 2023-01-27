@@ -51,7 +51,7 @@ export default function Menu() {
                 {/* Site info */}
                 <section className='menu-info'>
                     <p>Developed by: Boris Shvidchenko</p>
-                    <p>Last update: 01/25/2023</p>
+                    <p>Last update: 01/27/2023</p>
                 </section>
             </div>
         </div>
