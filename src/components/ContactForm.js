@@ -15,6 +15,17 @@ export default function ContactForm() {
         dispatch({ type: 'updateContactFormVisibility' })
     }
 
+    // Update contact form data
+    function updateContactFormData(event) {
+        dispatch({ 
+            type: 'updateContactFormData', 
+            contactFormData: {
+                ...state.contactFormData,
+                [event.target.name]: event.target.value
+            }
+        });
+    }
+
     // Submit form
     function submitForm(event) {
         event.preventDefault();
@@ -38,18 +49,18 @@ export default function ContactForm() {
                     {/* Email address */}
                     <section className='contact-form-section'>
                         <label htmlFor='email' className='contact-form-label'>Email <span className='contact-form-span'>*</span></label>  
-                        <input type='email' id='email' name='email' required className='contact-form-input' />
+                        <input onChange={(e) => updateContactFormData(e)} type='email' id='email' name='email' value={state.contactFormData.email} required className='contact-form-input' />
                     </section>
                     {/* Message */}
                     <section className='contact-form-section'>
                         <label htmlFor='message' className='contact-form-label'>Message <span className='contact-form-span'>*</span></label>  
-                        <textarea type='message' id='message' name='message' required rows='5'   className='contact-form-input contact-form-scrollbar' />
+                        <textarea onChange={(e) => updateContactFormData(e)} type='text' id='message' name='message' value={state.contactFormData.message} required rows='5'   className='contact-form-input contact-form-scrollbar' />
                     </section>
                     {/* Attachments */}
                     <section className='contact-form-section'>
-                        <label htmlFor='attachment' className='contact-form-label'>Attachments (PNG or JPG please)
+                        <label htmlFor='attachments' className='contact-form-label'>Attachments (PNG or JPG please)
                         </label>
-                        <input type='file' id='attachment' name='attachment' multiple className='text-[#cfcfcf]' />
+                        <input onChange={(e) => updateContactFormData(e)} type='file' id='attachments' name='attachments' multiple className='text-[#cfcfcf]' />
                     </section>
                     {/* Disclaimer */}
                     <section className='text-xs text-[#9b9b9b]'>

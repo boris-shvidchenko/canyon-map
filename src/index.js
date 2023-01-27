@@ -1,7 +1,7 @@
 // Components
 import App from './App';
 // Style
-import './index.css';
+import './styles/index.css';
 // Dependencies
 import React from 'react';
 import ReactDOM from 'react-dom/client';

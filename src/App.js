@@ -15,12 +15,13 @@ export default function App() {
   const initialState = {
     basemap: 'arcgis-topographic',
     menuIconVisible: true,
-    contactFormVisible: false
+    contactFormVisible: false,
+    contactFormData: {email: '', message: '', attachments: []}
   }
 
   // Reducer hook setup
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  console.log(state.contactFormData)
   // Reducer function setup
   function reducer(state, action) {
     switch (action.type) {
@@ -30,6 +31,8 @@ export default function App() {
         return {...state, menuIconVisible: !state.menuIconVisible}
       case 'updateContactFormVisibility':
         return {...state, contactFormVisible: !state.contactFormVisible}
+      case 'updateContactFormData':
+        return {...state, contactFormData: action.contactFormData}
     }
   }
 
