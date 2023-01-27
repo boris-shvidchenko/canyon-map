@@ -63,4 +63,22 @@
     .menu-info {
         @apply pt-6 px-8 text-xs text-[#9b9b9b] space-y-1
     }
+    .contact-form-main {
+        @apply px-8 space-y-4
+    }
+    .contact-form-section {
+        @apply flex flex-col space-y-1
+    }
+    .contact-form-label {
+        @apply text-[#fff] text-sm
+    }
+    .contact-form-span {
+        @apply text-[#f72b2b]
+    }
+    .contact-form-input {
+        @apply border-none rounded-sm bg-[#afafaf] py-1 px-2 focus:outline-none text-sm
+    }
+    .contact-form-scrollbar {
+        @apply resize-none scrollbar-thin scrollbar-thumb-[#8a8a8a]
+    }
 }
