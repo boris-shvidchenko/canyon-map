@@ -15,6 +15,7 @@ export default function App() {
   // Default state store 
   const initialState = {
     basemap: 'arcgis-topographic',
+    twoDimensional: true,
     menuIconVisible: true,
     contactFormVisible: false,
     contactFormData: {email: '', message: '', attachments: []}
@@ -24,13 +25,15 @@ export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // Test
-  console.log(state.contactFormData)
+  // console.log(state)
 
   // Reducer function setup
   function reducer(state, action) {
     switch (action.type) {
       case 'updateBasemap':
         return {...state, basemap: action.basemap}
+      case 'switchMapType':
+        return {...state, twoDimensional: action.twoDimensional}
       case 'updateMenuIconVisibility':
         return {...state, menuIconVisible: !state.menuIconVisible}
       case 'updateContactFormVisibility':

@@ -8,7 +8,7 @@ export default function BasemapContainer() {
     // Obtain state from context
     const { state, dispatch } = useContext(Context);
 
-    // Updates the basemap state
+    // Update the basemap state
     function updateBasemap(newBasemap) {
         dispatch({ type: 'updateBasemap', basemap: newBasemap})
     }
