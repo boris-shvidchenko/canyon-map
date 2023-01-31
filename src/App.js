@@ -5,7 +5,7 @@ import MapTypeContainer from './components/MapTypeContainer';
 import Menu from './components/Menu';
 import ContactForm from './components/ContactForm';
 // Hooks
-import { createContext, useReducer } from 'react';
+import { createContext, useReducer, useEffect } from 'react';
 
 // Context
 export const Context = createContext(); 
@@ -18,7 +18,8 @@ export default function App() {
     twoDimensional: true,
     menuIconVisible: true,
     contactFormVisible: false,
-    contactFormData: {email: '', message: '', attachments: []}
+    contactFormData: {email: '', message: '', attachments: []},
+    screenWidth: null
   }
 
   // Reducer hook setup
@@ -40,8 +41,23 @@ export default function App() {
         return {...state, contactFormVisible: !state.contactFormVisible}
       case 'updateContactFormData':
         return {...state, contactFormData: action.contactFormData}
+      case 'updateScreenWidth':
+        return {...state, screenWidth: action.screenWidth}
     }
   }
+
+  // Sets the screenWidth state to the current browser width. This is used in order to render components based on whether mobile view is used or not.
+  // The code in the useEffect hook was referenced from the following source: https://stackoverflow.com/questions/63406435/how-to-detect-window-size-in-next-js-ssr-using-react-hook
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      function handleResize() {
+        dispatch({type: 'updateScreenWidth', screenWidth: window.innerWidth});
+      }
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   return (
     <Context.Provider value={{state, dispatch}}>
