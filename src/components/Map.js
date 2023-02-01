@@ -36,7 +36,7 @@ export default function MainMap() {
             ymax: 42.19054,
             spatialReference: 4326
         },
-        // Removes the + and - widget from the map
+        // Removes the +/- widget from the map
         ui: {
           components: ["attribution"]
         },
@@ -55,12 +55,12 @@ export default function MainMap() {
                 z: 2000000
             }
         },
-        // Removes the + and - widget from the map
+        // Removes the +/- and navigation widgets from the map
         ui: {
-          padding: {top: 100, left: 15},
+          components: ["attribution"]
         }      
       });
-  
+
     // Create a template for popups
     const popupTemplate = {
         title: '{Name}',
@@ -93,8 +93,8 @@ export default function MainMap() {
     // Add feature to map
     map.add(feature, 0);
 
-    // Customize 3D map widgets
-    // view3D.ui.remove(['zoom','navigation-toggle']);
+    // Add compass widget to map if 3D view is selected
+    if (!state.twoDimensional) view.ui.add('compass', 'top-left');
 
     // Customize the (2D map) popup
     view.popup = {
