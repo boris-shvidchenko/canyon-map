@@ -33,7 +33,7 @@ export default function ContactForm() {
 
     return (
         <div>
-            <div className={`${!state.contactFormVisible && 'fixed top-0 -right-96'} ${state.contactFormVisible && 'fixed top-0 right-0'} menu-container z-20`}>
+            <div className={`menu-container z-20 ${!state.contactFormVisible && 'fixed top-0 -right-96'} ${state.contactFormVisible && 'fixed top-0 right-0'} ${state.screenWidth < 390 && 'w-screen h-auto pb-6'}`}>
                 {/* Header */}
                 <section className='menu-header-section'>
                     <h1 className='menu-main-header'>Contact</h1>

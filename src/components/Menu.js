@@ -25,7 +25,7 @@ export default function Menu() {
             <div className={`${!state.menuIconVisible && 'hidden'} menu-icon-container`}>
                 <Bars3Icon onClick={toggleMenu} className='menu-icon' />
             </div>
-            <div className={`${state.menuIconVisible && 'fixed top-0 -right-96'} ${!state.menuIconVisible && 'fixed top-0 right-0'} menu-container`}>
+            <div className={`menu-container ${state.menuIconVisible && 'fixed top-0 -right-96'} ${!state.menuIconVisible && 'fixed top-0 right-0'} ${state.screenWidth < 390 && 'w-screen h-auto pb-6'} ${(state.contactFormVisible && state.screenWidth < 390) && 'hidden'}`}>
                 {/* Header */}
                 <section className='menu-header-section'>
                     <h1 className='menu-main-header'>Canyon Map</h1>

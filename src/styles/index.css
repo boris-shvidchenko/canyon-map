@@ -34,6 +34,12 @@ body {
     .basemap-container-map-name {
         @apply absolute -bottom-1 px-1 bg-[#404040] w-[3.85rem] text-center rounded-sm text-white font-semibold text-sm
     }
+    .map-type-container-main {
+        @apply bg-[#40404080] absolute flex justify-around items-center p-1 rounded-sm
+    }
+    .map-type-container-section {
+        @apply bg-[#404040] text-white rounded-sm w-8 h-8 flex justify-center items-center cursor-pointer hover:text-[#ff6a00]
+    }
     .menu-icon-container {
         @apply absolute top-7 right-7 bg-[#404040] p-1 rounded-sm
     }
