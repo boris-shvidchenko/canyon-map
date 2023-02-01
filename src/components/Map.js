@@ -23,45 +23,44 @@ export default function MainMap() {
       basemap: state.basemap, 
       ground: 'world-elevation'
     });
+
+    // Creates a new 2D/3D view
+    const view = state.twoDimensional ? 
+      new MapView({
+        container: 'root',
+        map: map,
+        extent: {
+            xmin: -108.149414,
+            ymin: 36.450743,
+            xmax: -115.092773,
+            ymax: 42.19054,
+            spatialReference: 4326
+        },
+        // Removes the + and - widget from the map
+        ui: {
+          components: ["attribution"]
+        },
+        // Disables map rotation with right mouse click
+        constraints: {
+          rotationEnabled: false
+        }
+      }) :
+      new SceneView({
+        container: 'root',
+        map: map,
+        camera: {
+            position: {
+                x: -111.513936,
+                y: 39.133887,
+                z: 2000000
+            }
+        },
+        // Removes the + and - widget from the map
+        ui: {
+          padding: {top: 100, left: 15},
+        }      
+      });
   
-    // Create a new 2D map view to hold/display the map
-    const view = new MapView({
-      container: 'root',
-      map: map,
-      extent: {
-          xmin: -108.149414,
-          ymin: 36.450743,
-          xmax: -115.092773,
-          ymax: 42.19054,
-          spatialReference: 4326
-      },
-      // Removes the + and - widget from the map
-      ui: {
-        components: ["attribution"]
-      },
-      // Disables map rotation with right mouse click
-      constraints: {
-        rotationEnabled: false
-      }
-    });
-
-    // Create a new 3D map view(scene) to hold/display the map
-    // const view3D = new SceneView({
-    //     container: 'root',
-    //     map: map,
-    //     camera: {
-    //         position: {
-    //             x: -111.513936,
-    //             y: 39.133887,
-    //             z: 2000000
-    //         }
-    //     },
-    //     // Removes the + and - widget from the map
-    //     ui: {
-    //       padding: {top: 100, left: 15},
-    //     }
-    // })
-
     // Create a template for popups
     const popupTemplate = {
         title: '{Name}',
@@ -109,7 +108,7 @@ export default function MainMap() {
         collapseEnabled: false
     };
 
-  }, [state.basemap])
+  }, [state.basemap, state.twoDimensional])
 
   return (
     <div className='h-screen w-full'></div> 
