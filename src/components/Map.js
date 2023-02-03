@@ -57,6 +57,10 @@ export default function MainMap() {
         },
         // Removes the +/- and navigation widgets from the map
         ui: {
+          padding: {
+            top: 25,
+            left: 20
+          },
           components: ["attribution"]
         }      
       });
