@@ -15,12 +15,13 @@ export default function App() {
   // Default state store 
   const initialState = {
     basemap: 'arcgis-topographic',
-    twoDimensional: true,
-    menuIconVisible: true,
-    contactFormVisible: false,
     contactFormData: {email: '', message: '', attachments: []},
-    screenWidth: null,
+    contactFormVisible: false,
+    isLoading: true,
+    menuIconVisible: true,
     screenHeight: null,
+    screenWidth: null,
+    twoDimensional: true,
   }
 
   // Reducer hook setup
@@ -34,6 +35,8 @@ export default function App() {
     switch (action.type) {
       case 'updateBasemap':
         return {...state, basemap: action.basemap}
+      case 'updateLoading':
+        return {...state, isLoading: action.isLoading}
       case 'switchMapType':
         return {...state, twoDimensional: action.twoDimensional}
       case 'updateMenuIconVisibility':
@@ -49,9 +52,23 @@ export default function App() {
     }
   }
 
-  // Sets the screenWidth state to the current browser width. This is used in order to render components based on whether mobile view is used or not.
-  // The code in the useEffect hook was referenced from the following source: https://stackoverflow.com/questions/63406435/how-to-detect-window-size-in-next-js-ssr-using-react-hook
+  // Returns a Promise which resolves within 1 second. Used to show/hide the loader
+  function trackLoading() {
+    return new Promise(resolve => setTimeout(() => resolve(), 1000));
+  }
+
   useEffect(() => {
+    // Resolves a promise. Removes the loader container from DOM if it exists, updates is loading state.  
+    // Code was referenced from: https://lateeflab.com/display-a-loading-spinner-while-dom-is-rendering-in-reactjs/
+    trackLoading().then(() => {
+      const loaderElement = document.querySelector(".loader-container");
+      if (loaderElement) {
+        loaderElement.remove();
+        dispatch({type: 'updateLoading', isLoading: !state.isLoading});
+      }
+    });
+    // Sets the width/height state to the current browser dimensions. Used for responsive UI design.
+    // Code was referenced from: https://stackoverflow.com/questions/63406435/how-to-detect-window-size-in-next-js-ssr-using-react-hook
     if (typeof window !== 'undefined') {
       function handleResize() {
         dispatch({type: 'updateScreenWidth', screenWidth: window.innerWidth});
@@ -62,6 +79,11 @@ export default function App() {
       return () => window.removeEventListener('resize', handleResize);
     }
   }, []);
+
+  // If loading state is true, dont render the main content.
+  if (state.isLoading) {
+    return null;
+  }
 
   return (
     <Context.Provider value={{state, dispatch}}>
