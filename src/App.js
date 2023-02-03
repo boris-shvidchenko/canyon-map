@@ -19,7 +19,8 @@ export default function App() {
     menuIconVisible: true,
     contactFormVisible: false,
     contactFormData: {email: '', message: '', attachments: []},
-    screenWidth: null
+    screenWidth: null,
+    screenHeight: null,
   }
 
   // Reducer hook setup
@@ -43,6 +44,8 @@ export default function App() {
         return {...state, contactFormData: action.contactFormData}
       case 'updateScreenWidth':
         return {...state, screenWidth: action.screenWidth}
+      case 'updateScreenHeight':
+        return {...state, screenHeight: action.screenHeight}
     }
   }
 
@@ -52,6 +55,7 @@ export default function App() {
     if (typeof window !== 'undefined') {
       function handleResize() {
         dispatch({type: 'updateScreenWidth', screenWidth: window.innerWidth});
+        dispatch({type: 'updateScreenHeight', screenHeight: window.innerHeight});
       }
       window.addEventListener('resize', handleResize);
       handleResize();
