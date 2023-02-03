@@ -31,9 +31,15 @@ export default function ContactForm() {
         event.preventDefault();
     }
 
+    // Styles
+    const contactFormNotVisible = !state.contactFormVisible && 'fixed top-0 -right-96';
+    const contactFormVisible = state.contactFormVisible && 'fixed top-0 right-0';
+    const width = state.screenWidth < 390 && 'w-screen h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
+    const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
+
     return (
         <div>
-            <div className={`menu-container z-20 ${!state.contactFormVisible && 'fixed top-0 -right-96'} ${state.contactFormVisible && 'fixed top-0 right-0'} ${state.screenWidth < 390 && 'w-screen h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6'} ${state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6'}`}>
+            <div className={`menu-container z-20 ${contactFormNotVisible} ${contactFormVisible} ${width} ${height}`}>
                 {/* Header */}
                 <section className='menu-header-section'>
                     <h1 className='menu-main-header'>Contact</h1>

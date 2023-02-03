@@ -20,12 +20,20 @@ export default function Menu() {
         dispatch({ type: 'updateContactFormVisibility' })
     }
 
+    // Styles
+    const menuIcon = !state.menuIconVisible && 'hidden';
+    const menuVisible = !state.menuIconVisible && 'fixed top-0 right-0';
+    const menuNotVisible = state.menuIconVisible && 'fixed top-0 -right-96';
+    const width = state.screenWidth < 390 && 'w-screen h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
+    const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
+
+
     return (
         <div>
-            <div className={`${!state.menuIconVisible && 'hidden'} menu-icon-container`}>
+            <div className={`${menuIcon} menu-icon-container`}>
                 <Bars3Icon onClick={toggleMenu} className='menu-icon' />
             </div>
-            <div className={`menu-container ${state.menuIconVisible && 'fixed top-0 -right-96'} ${!state.menuIconVisible && 'fixed top-0 right-0'} ${state.screenWidth < 390 && 'w-screen h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6'} ${(state.contactFormVisible && state.screenWidth < 390) && 'hidden'} ${state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6'}`}>
+            <div className={`menu-container ${menuNotVisible} ${menuVisible} ${width} ${height}`}>
                 {/* Header */}
                 <section className='menu-header-section'>
                     <h1 className='menu-main-header'>Canyon Map</h1>
