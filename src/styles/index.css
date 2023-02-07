@@ -22,7 +22,7 @@ body {
     border-radius: 50%;
     width: 80px;
     height: 80px;
-    margin-bottom: 20rem;
+    margin-bottom: 15rem;
     animation: spin 2s linear infinite;
 }
 
