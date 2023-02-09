@@ -15,7 +15,7 @@ export default function App() {
   // Default state store 
   const initialState = {
     basemap: 'arcgis-topographic',
-    contactFormData: {email: '', message: '', attachments: []},
+    contactFormData: {email: '', message: ''},
     contactFormVisible: false,
     isLoading: true,
     menuIconVisible: true,
@@ -28,7 +28,7 @@ export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // Test
-  // console.log(state)
+  console.log(state)
 
   // Reducer function setup
   function reducer(state, action) {

@@ -1,14 +1,19 @@
 // Hooks
-import { useContext } from 'react'
+import { useContext, useRef } from 'react'
 // Context
 import { Context } from '../App'
 // Heroicons
 import { ChevronRightIcon } from '@heroicons/react/24/solid'
+// EmailJS
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
 
     // Obtain state from context
     const { state, dispatch } = useContext(Context);
+
+    // Reference to form for EmailJS
+    const form = useRef();
 
     // Open/close contact form
     function toggleContact() {
@@ -29,6 +34,13 @@ export default function ContactForm() {
     // Submit form
     function submitForm(event) {
         event.preventDefault();
+        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
+            .then(() => {
+                console.log('Message sent');
+            }, (error) => {
+                console.log(error.text);
+            })
+            .then(dispatch({ type: 'updateContactFormData', contactFormData: {email: '', message: ''} }));
     }
 
     // Styles
@@ -51,7 +63,7 @@ export default function ContactForm() {
                     <hr className='border-[#8a8a8a] my-4' />
                 </section>
                 {/* Form */}
-                <form onSubmit={(e) => submitForm(e)} className='contact-form-main'>
+                <form onSubmit={(e) => submitForm(e)} ref={form} className='contact-form-main'>
                     {/* Email address */}
                     <section className='contact-form-section'>
                         <label htmlFor='email' className='contact-form-label'>Email <span className='contact-form-span'>*</span></label>  

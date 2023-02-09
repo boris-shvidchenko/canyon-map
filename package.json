@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@arcgis/core": "^4.25.5",
+    "@emailjs/browser": "^3.10.0",
     "@heroicons/react": "^2.0.13",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
