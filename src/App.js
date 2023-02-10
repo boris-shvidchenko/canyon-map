@@ -28,7 +28,7 @@ export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   // Test
-  console.log(state)
+  // console.log(state)
 
   // Reducer function setup
   function reducer(state, action) {

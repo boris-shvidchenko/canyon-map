@@ -59,7 +59,7 @@ export default function ContactForm() {
                 </section>
                 {/* Body */}
                 <section className='menu-text-section'>
-                    <p className='menu-text'>If you'd like to have a new canyon added please include the name and the rating in the message below. A description of where the canyon is located would be helpful as well (or better yet, attach a map!). Feel free to include an image to use for the preview.</p>
+                    <p className='menu-text'>If you'd like to have a new canyon added please include the name and the rating in the message below. A description of where the canyon is located would be helpful as well (or better yet, provide a link to a map!).</p>
                     <hr className='border-[#8a8a8a] my-4' />
                 </section>
                 {/* Form */}
@@ -74,19 +74,13 @@ export default function ContactForm() {
                         <label htmlFor='message' className='contact-form-label'>Message <span className='contact-form-span'>*</span></label>  
                         <textarea onChange={(e) => updateContactFormData(e)} type='text' id='message' name='message' value={state.contactFormData.message} required rows='5'   className='contact-form-input contact-form-scrollbar' />
                     </section>
-                    {/* Attachments */}
-                    <section className='contact-form-section'>
-                        <label htmlFor='attachments' className='contact-form-label'>Attachments (PNG or JPG please)
-                        </label>
-                        <input onChange={(e) => updateContactFormData(e)} type='file' id='attachments' name='attachments' multiple className='text-[#cfcfcf]' />
-                    </section>
                     {/* Disclaimer */}
                     <section className='text-xs text-[#9b9b9b]'>
-                        <p>Please note: By adding images you give permission for them to be used on this website.</p>
+                        <p>Please note: If a new canyon is requested and an exact location cannot be accurately determined, the canyon will not be added.</p>
                     </section>
                     {/* Submit Button */}
                     <section>
-                        <button type='submit' className='menu-button ml-0 mt-0'>Submit</button>
+                        <button type='submit' className='menu-button ml-0 mt-5'>Submit</button>
                     </section>
                 </form>
             </div>

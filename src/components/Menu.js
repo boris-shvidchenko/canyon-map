@@ -42,12 +42,12 @@ export default function Menu() {
                 {/* About */}
                 <section className='menu-text-section'>
                     <h2 className='menu-header'>About</h2>
-                    <p className='menu-text'>This app attempts to display all known canyoneering routes around the world. Although the end goal is to maintain a map showing all canyons that have known descents, adding routes takes time, and thus some canyons may not be present.</p>
+                    <p className='menu-text'>This app attempts to display all known canyoneering routes around the world. Although the end goal is to maintain a map showing all canyons that have known descents, adding routes takes time, and thus some canyons might not be currently displayed.</p>
                 </section>
                 {/* Disclaimer */}
                 <section className='menu-text-section'>
                     <h2 className='menu-header'>Disclaimer</h2>
-                    <p className='menu-text'>The content on this map might not be accurate and is for informational purposes only and should not be used for navigation. Before attempting a canyon, make sure you have the necessary knowledge and training to do so.</p>
+                    <p className='menu-text'>The content in this map might not be accurate and is for informational purposes only and should not be used for navigation. Before attempting a canyon, make sure you have the necessary knowledge and training to do so.</p>
                 </section>
                 {/* Contact */}
                 <section className='menu-text-section'>
@@ -59,7 +59,7 @@ export default function Menu() {
                 {/* Site info */}
                 <section className='menu-info'>
                     <p>Developed by: Boris Shvidchenko</p>
-                    <p>Last update: 01/27/2023</p>
+                    <p>Last update: 02/09/2023</p>
                 </section>
             </div>
         </div>
