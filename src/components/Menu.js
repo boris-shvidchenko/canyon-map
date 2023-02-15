@@ -52,14 +52,14 @@ export default function Menu() {
                 {/* Contact */}
                 <section className='menu-text-section'>
                     <h2 className='menu-header'>Contact</h2>
-                    <p className='menu-text'>Want to request a canyon to be added? Found a bug? Have suggestions for improvements? Get in touch!</p>
+                    <p className='menu-text'>Spotted an error? Found a bug? Have suggestions for improvements? Get in touch!</p>
                 </section>
                 {/* Send message button */}
                 <div onClick={toggleContact} className='menu-button'>Send a message</div>
                 {/* Site info */}
                 <section className='menu-info'>
                     <p>Developed by: Boris Shvidchenko</p>
-                    <p>Last update: 02/09/2023</p>
+                    <p>Last update: 02/15/2023</p>
                 </section>
             </div>
         </div>
