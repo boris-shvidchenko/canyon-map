@@ -21,10 +21,10 @@ export default function MapTypeContainer() {
     return (
         <div className={`${mainDivStyle} map-type-container-main`}>
             <section onClick={(e) => changeMapType(e)} className={`map-type-container-section ${state.twoDimensional && 'text-[#ff6a00]'}`}>
-                <p className='text-lg font-semibold'>2D</p>
+                <p>2D</p>
             </section>
             <section onClick={(e) => changeMapType(e)} className={`map-type-container-section ${!state.twoDimensional && 'text-[#ff6a00]'}`}>
-                <p className='text-lg font-semibold'>3D</p>
+                <p>3D</p>
             </section>
         </div>
     )
