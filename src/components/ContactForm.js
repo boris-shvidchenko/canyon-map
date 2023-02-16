@@ -60,7 +60,7 @@ export default function ContactForm() {
                 {/* Body */}
                 <section className='menu-text-section'>
                     <p className='menu-text'>Reach out! Questions will be replied to as soon as possible.</p>
-                    <p className='menu-text'>If reporting an issue or bug, please provide all available information and details so that a fix can be implemented.</p>
+                    <p className='menu-text'>If reporting an issue or bug, please provide as much information as possible so that a fix can be implemented.</p>
                     <hr className='border-[#8a8a8a] my-4' />
                 </section>
                 {/* Form */}
