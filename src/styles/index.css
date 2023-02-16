@@ -50,6 +50,7 @@ body {
 /* Changes popup header title color */
 .esri-popup__header-title {
     color: #ff6a00;
+    margin-left: 14px;
 }
 
 /* Changes the hover color changes on the popup buttons */
