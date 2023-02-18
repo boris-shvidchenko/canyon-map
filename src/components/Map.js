@@ -38,7 +38,7 @@ export default function MainMap() {
         },
         // Removes the +/- widget from the map
         ui: {
-          components: ["attribution"]
+          components: ['attribution']
         },
         // Disables map rotation with right mouse click
         constraints: {
@@ -61,7 +61,7 @@ export default function MainMap() {
             top: 25,
             left: 20
           },
-          components: ["attribution"]
+          components: ['attribution']
         }      
       });
 
@@ -79,18 +79,40 @@ export default function MainMap() {
 
     // Define the style of the feature layer
     const featureStyle = {
-        type: "simple",  
+        type: 'simple',  
         symbol: {
-            type: "simple-line",  
+            type: 'simple-line',  
             color: [ 255, 51, 0, 1 ],
             width: 1.5
         }
+    };
+
+    // Define label properties
+    const featureLabels = {
+      symbol: {
+        type: 'text',
+        color: 'black',
+        haloColor: 'white',
+        haloSize: 1,
+        font: {
+          family: 'sans-serif',
+          size: 12
+        }
+      },
+      maxScale: 0,
+      minScale: 100000,
+      repeatLabel: false,
+      labelPlacement: 'above-center',
+      labelExpressionInfo: {
+        expression: '$feature.Name'
+      }
     };
 
     // Define a feature layer to use
     const feature = new FeatureLayer({
       url: 'https://services5.arcgis.com/K2yvD247JkyVgWmg/arcgis/rest/services/canyons/FeatureServer/0',
       renderer: featureStyle,
+      labelingInfo: featureLabels,
       popupTemplate: popupTemplate
     });
  
