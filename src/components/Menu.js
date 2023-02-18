@@ -47,7 +47,7 @@ export default function Menu() {
                 {/* Disclaimer */}
                 <section className='menu-text-section'>
                     <h2 className='menu-header'>Disclaimer</h2>
-                    <p className='menu-text'>The content in this map might not be accurate and is for informational purposes only and should not be used for navigation. Before attempting a canyon, make sure you have the necessary knowledge and training to do so.</p>
+                    <p className='menu-text'>The content on this map might not be accurate and is for informational purposes only and should not be used for navigation. Before attempting a canyon, make sure you have the necessary knowledge and training to do so.</p>
                 </section>
                 {/* Contact */}
                 <section className='menu-text-section'>
@@ -59,7 +59,7 @@ export default function Menu() {
                 {/* Site info */}
                 <section className='menu-info'>
                     <p>Developed by: Boris Shvidchenko</p>
-                    <p>Last update: 02/15/2023</p>
+                    <p>Last update: 02/17/2023</p>
                 </section>
             </div>
         </div>
