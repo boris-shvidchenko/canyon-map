@@ -1,7 +1,7 @@
 // Hooks
-import { useContext } from 'react'
+import { useContext } from 'react';
 // Context
-import { Context } from '../App'
+import { Context } from '../App';
 
 export default function BasemapContainer() {
 
@@ -10,7 +10,7 @@ export default function BasemapContainer() {
 
     // Update the basemap state
     function updateBasemap(newBasemap) {
-        dispatch({ type: 'updateBasemap', basemap: newBasemap})
+        dispatch({ type: 'updateBasemap', basemap: newBasemap});
     }
 
     // Styles

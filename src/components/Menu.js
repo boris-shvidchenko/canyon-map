@@ -1,9 +1,9 @@
 // Hooks
-import { useContext } from 'react'
+import { useContext } from 'react';
 // Context
-import { Context } from '../App'
+import { Context } from '../App';
 // Heroicons
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 export default function Menu() {
 
@@ -12,12 +12,12 @@ export default function Menu() {
 
     // Open/close menu
     function toggleMenu() {
-        dispatch({ type: 'updateMenuIconVisibility' })
+        dispatch({ type: 'updateMenuIconVisibility' });
     } 
 
     // Open/close contact form
     function toggleContact() {
-        dispatch({ type: 'updateContactFormVisibility' })
+        dispatch({ type: 'updateContactFormVisibility' });
     }
 
     // Styles

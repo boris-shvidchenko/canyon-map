@@ -22,7 +22,7 @@ export default function App() {
     screenHeight: null,
     screenWidth: null,
     twoDimensional: true,
-  }
+  };
 
   // Reducer hook setup
   const [state, dispatch] = useReducer(reducer, initialState);

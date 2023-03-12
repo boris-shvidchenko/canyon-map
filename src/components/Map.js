@@ -134,7 +134,7 @@ export default function MainMap() {
         collapseEnabled: false
     };
 
-  }, [state.basemap, state.twoDimensional])
+  }, [state.basemap, state.twoDimensional]);
 
   return (
     <div className='h-screen w-full'></div> 

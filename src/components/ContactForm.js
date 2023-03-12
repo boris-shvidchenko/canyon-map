@@ -1,9 +1,9 @@
 // Hooks
-import { useContext, useRef } from 'react'
+import { useContext, useRef } from 'react';
 // Context
-import { Context } from '../App'
+import { Context } from '../App';
 // Heroicons
-import { ChevronRightIcon } from '@heroicons/react/24/solid'
+import { ChevronRightIcon } from '@heroicons/react/24/solid';
 // EmailJS
 import emailjs from '@emailjs/browser';
 
@@ -17,7 +17,7 @@ export default function ContactForm() {
 
     // Open/close contact form
     function toggleContact() {
-        dispatch({ type: 'updateContactFormVisibility' })
+        dispatch({ type: 'updateContactFormVisibility' });
     }
 
     // Update contact form data
