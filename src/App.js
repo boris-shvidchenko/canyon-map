@@ -6,6 +6,9 @@ import Menu from './components/Menu';
 import ContactForm from './components/ContactForm';
 // Hooks
 import { createContext, useReducer, useEffect } from 'react';
+// Vercel Analytics (Audience)
+import { inject } from '@vercel/analytics';
+inject();
 
 // Context
 export const Context = createContext(); 
