@@ -1,4 +1,4 @@
-##About
+## About
 
 Canyon map is an application that attempts to display known canyoneering routes, worldwide. Canyon data is obtained from a variety of sources including official guides, trip reports, and other maps. Please note that some existing canyons with known descents may or may not be included because of the time commitment required in updating the map. Periodic updates will add additional routes and future versions will potentially include added functionality.
 
@@ -6,7 +6,7 @@ Canyon map is an application that attempts to display known canyoneering routes,
 
 This project was built using React and Tailwind CSS. 
 
-##Credits
+## Credits
 
  - ESRI for their ArcGIS Javascript API (https://developers.arcgis.com/javascript/latest/)
  - Vercel (https://vercel.com/)
