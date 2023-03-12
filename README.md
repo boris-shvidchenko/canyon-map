@@ -12,4 +12,4 @@ This project was built using React and Tailwind CSS.
  - Vercel (https://vercel.com/)
  - Heroicons (https://heroicons.com/)
  - EmailJS (https://www.emailjs.com/)
- - All of the many dependencies and libraries used by this application.
+ - All of the many dependencies and libraries used by this application
