@@ -42,7 +42,7 @@ export default function Menu() {
                 {/* About */}
                 <section className='menu-text-section'>
                     <h2 className='menu-header'>About</h2>
-                    <p className='menu-text'>This app attempts to display all known canyoneering routes around the world. Although the end goal is to maintain a map showing all canyons that have known descents, adding routes takes time, and thus some canyons might not be currently displayed.</p>
+                    <p className='menu-text'>This app attempts to display known canyoneering routes. The end goal is to maintain a map showing all canyons that have recorded descents; however, adding routes takes time and thus some canyons might not be currently displayed.</p>
                 </section>
                 {/* Disclaimer */}
                 <section className='menu-text-section'>
