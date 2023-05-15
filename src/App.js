@@ -1,5 +1,5 @@
 // Components
-import MainMap from './components/Map';
+import MainMap from './components/MainMap';
 import BasemapContainer from './components/BasemapContainer';
 import MapTypeContainer from './components/MapTypeContainer';
 import Menu from './components/Menu';
