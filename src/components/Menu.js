@@ -26,6 +26,9 @@ export default function Menu() {
     const menuNotVisible = state.menuIconVisible && 'fixed top-0 -right-96';
     const width = state.screenWidth < 390 && 'w-screen h-screen overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
     const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
+    
+    const padding = state.screenWidth < 390 && 'pt-3';
+    const infoPadding = state.screenWidth < 390 && 'pt-4';
 
 
     return (
@@ -40,24 +43,24 @@ export default function Menu() {
                     <XMarkIcon onClick={toggleMenu} className='menu-x' />
                 </section>
                 {/* About */}
-                <section className='menu-text-section'>
+                <section className={`menu-text-section ${padding}`}>
                     <h2 className='menu-header'>About</h2>
                     <p className='menu-text'>This app attempts to display known canyoneering routes. The end goal is to maintain a map showing all canyons that have recorded descents; however, adding routes takes time and thus some canyons might not be currently displayed.</p>
                 </section>
                 {/* Disclaimer */}
-                <section className='menu-text-section'>
+                <section className={`menu-text-section ${padding}`}>
                     <h2 className='menu-header'>Disclaimer</h2>
                     <p className='menu-text'>The content on this map might not be accurate and is for informational purposes only and should not be used for navigation. Before attempting a canyon, make sure you have the necessary knowledge and training to do so.</p>
                 </section>
                 {/* Contact */}
-                <section className='menu-text-section'>
+                <section className={`menu-text-section ${padding}`}>
                     <h2 className='menu-header'>Contact</h2>
                     <p className='menu-text'>Spotted an error? Found a bug? Have suggestions for improvements? Get in touch!</p>
                 </section>
                 {/* Send message button */}
                 <div onClick={toggleContact} className='menu-button'>Send a message</div>
                 {/* Site info */}
-                <section className='menu-info'>
+                <section className={`menu-info ${infoPadding}`}>
                     <p>Developed by: Boris Shvidchenko</p>
                     <p>Last update: 06/16/2023</p>
                 </section>
