@@ -26,9 +26,9 @@ export default function Menu() {
     const menuNotVisible = state.menuIconVisible && 'fixed top-0 -right-96';
     const width = state.screenWidth < 390 && 'w-screen h-screen overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
     const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
-    
+
     const padding = state.screenWidth < 390 && 'pt-3';
-    const infoPadding = state.screenWidth < 390 && 'pt-4';
+    const infoMobile = state.screenWidth < 390 && 'pt-4 text-[0.70rem] space-y-0';
 
 
     return (
@@ -60,7 +60,7 @@ export default function Menu() {
                 {/* Send message button */}
                 <div onClick={toggleContact} className='menu-button'>Send a message</div>
                 {/* Site info */}
-                <section className={`menu-info ${infoPadding}`}>
+                <section className={`menu-info ${infoMobile}`}>
                     <p>Developed by: Boris Shvidchenko</p>
                     <p>Last update: 06/16/2023</p>
                 </section>
