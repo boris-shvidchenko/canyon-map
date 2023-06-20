@@ -48,6 +48,7 @@ export default function ContactForm() {
     const contactFormVisible = state.contactFormVisible && 'fixed top-0 right-0';
     const width = state.screenWidth < 390 && 'w-screen h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
     const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
+    const btnMobile = state.screenWidth < 390 && 'mt-2';
 
     return (
         <div>
@@ -77,7 +78,7 @@ export default function ContactForm() {
                     </section>
                     {/* Submit Button */}
                     <section>
-                        <button type='submit' className='menu-button ml-0 mt-3'>Submit</button>
+                        <button type='submit' className={`menu-button ml-0 mt-3 ${btnMobile}`}>Submit</button>
                     </section>
                 </form>
             </div>

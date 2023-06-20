@@ -26,7 +26,6 @@ export default function Menu() {
     const menuNotVisible = state.menuIconVisible && 'fixed top-0 -right-96';
     const width = state.screenWidth < 390 && 'w-screen h-screen overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
     const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
-
     const padding = state.screenWidth < 390 && 'pt-3';
     const btnMobile = state.screenWidth < 390 && 'mt-3';
     const infoMobile = state.screenWidth < 390 && 'pt-3 text-[0.70rem] space-y-0';
