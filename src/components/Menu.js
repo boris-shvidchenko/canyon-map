@@ -28,6 +28,7 @@ export default function Menu() {
     const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
 
     const padding = state.screenWidth < 390 && 'pt-3';
+    const btnMobile = state.screenWidth < 390 && 'mt-3';
     const infoMobile = state.screenWidth < 390 && 'pt-3 text-[0.70rem] space-y-0';
 
 
@@ -58,7 +59,7 @@ export default function Menu() {
                     <p className='menu-text'>Spotted an error? Found a bug? Have suggestions for improvements? Get in touch!</p>
                 </section>
                 {/* Send message button */}
-                <div onClick={toggleContact} className='menu-button'>Send a message</div>
+                <div onClick={toggleContact} className={`menu-button ${btnMobile}`}>Send a message</div>
                 {/* Site info */}
                 <section className={`menu-info ${infoMobile}`}>
                     <p>Developed by: Boris Shvidchenko</p>
