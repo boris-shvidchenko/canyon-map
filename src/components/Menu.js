@@ -28,7 +28,7 @@ export default function Menu() {
     const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
 
     const padding = state.screenWidth < 390 && 'pt-3';
-    const infoMobile = state.screenWidth < 390 && 'pt-4 text-[0.70rem] space-y-0';
+    const infoMobile = state.screenWidth < 390 && 'pt-3 text-[0.70rem] space-y-0';
 
 
     return (
