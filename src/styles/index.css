@@ -59,6 +59,11 @@ body {
     background-color: transparent;
 }
 
+/* Applies a styled scrollbar to the popup feature list */
+.esri-popup__feature-menu-viewport {
+    @apply scrollbar-thin scrollbar-thumb-[#8a8a8a]
+}
+
 @layer components {
     /* Basemap Container */
     .basemap-container-main-div {
