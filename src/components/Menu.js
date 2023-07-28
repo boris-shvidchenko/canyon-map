@@ -62,7 +62,7 @@ export default function Menu() {
                 {/* Site info */}
                 <section className={`menu-info ${infoMobile}`}>
                     <p>Developed by: Boris Shvidchenko</p>
-                    <p>Last update: 07/26/2023</p>
+                    <p>Last update: 07/27/2023</p>
                 </section>
             </div>
         </div>
