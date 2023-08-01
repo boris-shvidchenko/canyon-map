@@ -1,7 +1,8 @@
 // Hooks
 import { useContext, useRef } from 'react';
 // Context
-import { Context } from '../App';
+// import { Context } from '../App';
+import { Context } from '../state/appState';
 // Heroicons
 import { ChevronRightIcon } from '@heroicons/react/24/solid';
 // EmailJS

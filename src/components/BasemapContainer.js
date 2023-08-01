@@ -1,7 +1,8 @@
 // Hooks
 import { useContext } from 'react';
 // Context
-import { Context } from '../App';
+// import { Context } from '../App';
+import { Context } from '../state/appState';
 
 export default function BasemapContainer() {
 
