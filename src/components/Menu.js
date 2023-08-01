@@ -1,7 +1,6 @@
 // Hooks
 import { useContext } from 'react';
 // Context
-// import { Context } from '../App';
 import { Context } from '../state/appState';
 // Heroicons
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
