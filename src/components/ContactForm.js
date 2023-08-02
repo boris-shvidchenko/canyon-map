@@ -6,6 +6,8 @@ import { Context } from '../state/appState';
 import { ChevronRightIcon } from '@heroicons/react/24/solid';
 // EmailJS
 import emailjs from '@emailjs/browser';
+// Functions
+import { toggleContact, updateContactFormData, submitForm } from '../functions/appFunctions';
 
 export default function ContactForm() {
 
@@ -14,34 +16,6 @@ export default function ContactForm() {
 
     // Reference to form for EmailJS
     const form = useRef();
-
-    // Open/close contact form
-    function toggleContact() {
-        dispatch({ type: 'updateContactFormVisibility' });
-    }
-
-    // Update contact form data
-    function updateContactFormData(event) {
-        dispatch({ 
-            type: 'updateContactFormData', 
-            contactFormData: {
-                ...state.contactFormData,
-                [event.target.name]: event.target.value
-            }
-        });
-    }
-
-    // Submit form
-    function submitForm(event) {
-        event.preventDefault();
-        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
-            .then(() => {
-                console.log('Message sent');
-            }, (error) => {
-                console.log(error.text);
-            })
-            .then(dispatch({ type: 'updateContactFormData', contactFormData: {email: '', message: ''} }));
-    }
 
     // Styles
     const contactFormNotVisible = !state.contactFormVisible && 'fixed top-0 -right-96';
@@ -56,7 +30,7 @@ export default function ContactForm() {
                 {/* Header */}
                 <section className='menu-header-section'>
                     <h1 className='menu-main-header'>Contact</h1>
-                    <ChevronRightIcon onClick={toggleContact} className='menu-x' />
+                    <ChevronRightIcon onClick={() => toggleContact(dispatch)} className='menu-x' />
                 </section>
                 {/* Body */}
                 <section className='menu-text-section'>
@@ -65,16 +39,16 @@ export default function ContactForm() {
                     <hr className='border-[#8a8a8a] my-4' />
                 </section>
                 {/* Form */}
-                <form onSubmit={(e) => submitForm(e)} ref={form} className='contact-form-main'>
+                <form onSubmit={(e) => submitForm(e, emailjs, form, dispatch)} ref={form} className='contact-form-main'>
                     {/* Email address */}
                     <section className='contact-form-section'>
                         <label htmlFor='email' className='contact-form-label'>Email <span className='contact-form-span'>*</span></label>  
-                        <input onChange={(e) => updateContactFormData(e)} type='email' id='email' name='email' value={state.contactFormData.email} required className='contact-form-input' />
+                        <input onChange={(e) => updateContactFormData(dispatch, state, e)} type='email' id='email' name='email' value={state.contactFormData.email} required className='contact-form-input' />
                     </section>
                     {/* Message */}
                     <section className='contact-form-section'>
                         <label htmlFor='message' className='contact-form-label'>Message <span className='contact-form-span'>*</span></label>  
-                        <textarea onChange={(e) => updateContactFormData(e)} type='text' id='message' name='message' value={state.contactFormData.message} required rows='10'   className='contact-form-input contact-form-scrollbar' />
+                        <textarea onChange={(e) => updateContactFormData(dispatch, state, e)} type='text' id='message' name='message' value={state.contactFormData.message} required rows='10'   className='contact-form-input contact-form-scrollbar' />
                     </section>
                     {/* Submit Button */}
                     <section>

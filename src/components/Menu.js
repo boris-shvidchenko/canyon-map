@@ -4,21 +4,13 @@ import { useContext } from 'react';
 import { Context } from '../state/appState';
 // Heroicons
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+// Functions
+import { toggleMenu, toggleContact } from '../functions/appFunctions';
 
 export default function Menu() {
 
     // Obtain state from context
     const { state, dispatch } = useContext(Context);
-
-    // Open/close menu
-    function toggleMenu() {
-        dispatch({ type: 'updateMenuIconVisibility' });
-    } 
-
-    // Open/close contact form
-    function toggleContact() {
-        dispatch({ type: 'updateContactFormVisibility' });
-    }
 
     // Styles
     const menuIcon = !state.menuIconVisible && 'hidden';
@@ -30,17 +22,16 @@ export default function Menu() {
     const btnMobile = state.screenWidth < 390 && 'mt-3';
     const infoMobile = state.screenWidth < 390 && 'pt-3 text-[0.70rem] space-y-0';
 
-
     return (
         <div>
             <div className={`${menuIcon} menu-icon-container`}>
-                <Bars3Icon onClick={toggleMenu} className='menu-icon' />
+                <Bars3Icon onClick={() => toggleMenu(dispatch)} className='menu-icon' />
             </div>
             <div className={`menu-container ${menuNotVisible} ${menuVisible} ${width} ${height}`}>
                 {/* Header */}
                 <section className='menu-header-section'>
                     <h1 className='menu-main-header'>Canyon Map</h1>
-                    <XMarkIcon onClick={toggleMenu} className='menu-x' />
+                    <XMarkIcon onClick={() => toggleMenu(dispatch)} className='menu-x' />
                 </section>
                 {/* About */}
                 <section className={`menu-text-section ${padding}`}>
@@ -58,7 +49,7 @@ export default function Menu() {
                     <p className='menu-text'>Spotted an error? Found a bug? Have suggestions for improvements? Get in touch!</p>
                 </section>
                 {/* Send message button */}
-                <div onClick={toggleContact} className={`menu-button ${btnMobile}`}>Send a message</div>
+                <div onClick={() => toggleContact(dispatch)} className={`menu-button ${btnMobile}`}>Send a message</div>
                 {/* Site info */}
                 <section className={`menu-info ${infoMobile}`}>
                     <p>Developed by: Boris Shvidchenko</p>
