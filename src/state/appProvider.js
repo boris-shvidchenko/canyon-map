@@ -3,7 +3,7 @@ import reducer, { Context, initialState } from './appState';
 // Hooks
 import { useReducer, useEffect } from 'react';
 // Functions
-import { trackLoading, updateLoader, updateScreen } from '../functions/appFunctions';
+import { trackLoading } from '../functions/appFunctions';
 
 export default function AppProvider({ children }) {
 
@@ -11,8 +11,26 @@ export default function AppProvider({ children }) {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     useEffect(() => {
-        trackLoading().then(updateLoader(dispatch, state));
-        if (typeof window !== 'undefined') updateScreen(dispatch);  
+        // Resolves a promise. Removes the loader container from DOM if it exists, updates is loading state.  
+        // Code was referenced from: https://lateeflab.com/display-a-loading-spinner-while-dom-is-rendering-in-reactjs/
+        trackLoading().then(() => {
+        const loaderElement = document.querySelector(".loader-container");
+        if (loaderElement) {
+            loaderElement.remove();
+            dispatch({type: 'updateLoading', isLoading: !state.isLoading});
+        }
+        });
+        // Sets the width/height state to the current browser dimensions. Used for responsive UI design.
+        // Code was referenced from: https://stackoverflow.com/questions/63406435/how-to-detect-window-size-in-next-js-ssr-using-react-hook
+        if (typeof window !== 'undefined') {
+        function handleResize() {
+            dispatch({type: 'updateScreenWidth', screenWidth: window.innerWidth});
+            dispatch({type: 'updateScreenHeight', screenHeight: window.innerHeight});
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+        return () => window.removeEventListener('resize', handleResize);
+        }
     }, []);
 
     // If loading state is true, dont render the main content.
