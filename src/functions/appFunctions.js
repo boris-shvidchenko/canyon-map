@@ -43,11 +43,39 @@ function changeMapType(event, dispatch) {
         dispatch({type: 'switchMapType', twoDimensional: false});
 }
 
+// Returns a Promise which resolves within 1 second. Used to show/hide the loader
+function trackLoading() {
+    return new Promise(resolve => setTimeout(() => resolve(), 1000));
+}
+
+// Removes the loader container from DOM if it exists, updates is loading state. Code was referenced from: https://lateeflab.com/display-a-loading-spinner-while-dom-is-rendering-in-reactjs/
+function updateLoader(dispatch, state) {
+    const loaderElement = document.querySelector(".loader-container");
+    if (loaderElement) {
+        loaderElement.remove();
+        dispatch({type: 'updateLoading', isLoading: !state.isLoading});
+    }
+}
+
+// Sets the width/height state to the current browser dimensions. Used for responsive UI design. Code was referenced from: https://stackoverflow.com/questions/63406435/how-to-detect-window-size-in-next-js-ssr-using-react-hook
+function updateScreen(dispatch) {
+    function handleResize() {
+        dispatch({type: 'updateScreenWidth', screenWidth: window.innerWidth});
+        dispatch({type: 'updateScreenHeight', screenHeight: window.innerHeight});
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+}
+
 export {
     toggleMenu,
     toggleContact,
     updateContactFormData,
     submitForm,
     updateBasemap,
-    changeMapType
+    changeMapType,
+    trackLoading,
+    updateLoader,
+    updateScreen
 }
