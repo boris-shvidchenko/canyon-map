@@ -105,6 +105,7 @@ function createMap(state) {
     // Filter to use with the feature layer
     // const featureFilter = `"Rating = '${state.filter.tech + state.filter.water + state.filter.time}'"`;
     // console.log(featureFilter);
+    // View reference: https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#definitionExpression
 
     // Define a feature layer to use
     const feature = new FeatureLayer({
