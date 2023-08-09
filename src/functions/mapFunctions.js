@@ -4,7 +4,6 @@ import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import SceneView from '@arcgis/core/views/SceneView';
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
-import Query from '@arcgis/core/rest/support/Query';
 
 // Apply API key to access ArcGIS services
 function apiConfig() {
@@ -21,44 +20,44 @@ function createMap(state) {
 
     // Creates a new 2D/3D view
     const view = state.twoDimensional ? 
-    new MapView({
-        container: 'root',
-        map: map,
-        extent: {
-            xmin: -108.149414,
-            ymin: 36.450743,
-            xmax: -115.092773,
-            ymax: 42.19054,
-            spatialReference: 4326
-        },
-        // Removes the +/- widget from the map
-        ui: {
-        components: ['attribution']
-        },
-        // Disables map rotation with right mouse click
-        constraints: {
-        rotationEnabled: false
-        }
-    }) :
-    new SceneView({
-        container: 'root',
-        map: map,
-        camera: {
-            position: {
-                x: -111.513936,
-                y: 39.133887,
-                z: 2000000
+        new MapView({
+            container: 'root',
+            map: map,
+            extent: {
+                xmin: -108.149414,
+                ymin: 36.450743,
+                xmax: -115.092773,
+                ymax: 42.19054,
+                spatialReference: 4326
+            },
+            // Removes the +/- widget from the map
+            ui: {
+            components: ['attribution']
+            },
+            // Disables map rotation with right mouse click
+            constraints: {
+            rotationEnabled: false
             }
-        },
-        // Removes the +/- and navigation widgets from the map
-        ui: {
-        padding: {
-            top: 25,
-            left: 20
-        },
-        components: ['attribution']
-        }      
-    });
+        }) :
+        new SceneView({
+            container: 'root',
+            map: map,
+            camera: {
+                position: {
+                    x: -111.513936,
+                    y: 39.133887,
+                    z: 2000000
+                }
+            },
+            // Removes the +/- and navigation widgets from the map
+            ui: {
+            padding: {
+                top: 25,
+                left: 20
+            },
+            components: ['attribution']
+            }      
+        });
 
     // Create a template for popups
     const popupTemplate = {
@@ -103,18 +102,18 @@ function createMap(state) {
         }
     };
 
+    // Filter to use with the feature layer
+    // const featureFilter = `"Rating = '${state.filter.tech + state.filter.water + state.filter.time}'"`;
+    // console.log(featureFilter);
+
     // Define a feature layer to use
     const feature = new FeatureLayer({
         url: 'https://services5.arcgis.com/K2yvD247JkyVgWmg/arcgis/rest/services/canyons/FeatureServer/0',
         renderer: featureStyle,
         labelingInfo: featureLabels,
-        popupTemplate: popupTemplate
+        popupTemplate: popupTemplate,
+        // definitionExpression: featureFilter
     });
-
-    // Filter the feature
-    const query = feature.createQuery();
-    query.where = "Rating = '3AI'";
-    feature.queryFeatures(query);
 
     // Add feature to map
     map.add(feature, 0);
