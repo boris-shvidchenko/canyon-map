@@ -4,6 +4,7 @@ import Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import SceneView from '@arcgis/core/views/SceneView';
 import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
+import Query from '@arcgis/core/rest/support/Query';
 
 // Apply API key to access ArcGIS services
 function apiConfig() {
@@ -109,6 +110,11 @@ function createMap(state) {
         labelingInfo: featureLabels,
         popupTemplate: popupTemplate
     });
+
+    // Filter the feature
+    const query = feature.createQuery();
+    query.where = 'Rating = "3AI"';
+    feature.queryFeatures(query);
 
     // Add feature to map
     map.add(feature, 0);
