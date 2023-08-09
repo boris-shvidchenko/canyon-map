@@ -113,7 +113,7 @@ function createMap(state) {
 
     // Filter the feature
     const query = feature.createQuery();
-    query.where = 'Rating = "3AI"';
+    query.where = "Rating = '3AI'";
     feature.queryFeatures(query);
 
     // Add feature to map
