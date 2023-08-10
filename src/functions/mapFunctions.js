@@ -103,10 +103,7 @@ function createMap(state) {
     };
 
     // Filter to use with the feature layer
-    const featureFilter = Object.values(state.filter).every(i => {
-        if (i === null) return true;
-        return false
-    }) ? null : `Rating = '${state.filter.tech + state.filter.water + state.filter.time}'`;
+    const featureFilter = filterFeatureLayer(state) ? null : obtainFilter(state);
 
     // Define a feature layer to use
     const feature = new FeatureLayer({
@@ -134,6 +131,23 @@ function createMap(state) {
         },
         collapseEnabled: false
     };
+}
+
+// Returns true/false, based on whether the user defiend a filter condition
+function filterFeatureLayer(state) {
+    Object.values(state.filter).every(i => {
+        if (i === null) return true;
+        return false
+    })
+}
+
+// Compiles a rating to filter, based on the user's choices
+function obtainFilter(state) {
+
+
+    return `Rating = '${state.filter.tech + state.filter.water + state.filter.time}'`
+
+    // `Rating = '${state.filter.tech + state.filter.water + state.filter.time}'`
 }
 
 export {
