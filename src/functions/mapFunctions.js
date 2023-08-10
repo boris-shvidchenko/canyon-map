@@ -103,9 +103,10 @@ function createMap(state) {
     };
 
     // Filter to use with the feature layer
-    // const featureFilter = `"Rating = '${state.filter.tech + state.filter.water + state.filter.time}'"`;
-    // console.log(featureFilter);
-    // View reference: https://developers.arcgis.com/javascript/latest/api-reference/esri-layers-FeatureLayer.html#definitionExpression
+    const featureFilter = Object.values(state.filter).every(i => {
+        if (i === null) return true;
+        return false
+    }) ? null : `Rating = '${state.filter.tech + state.filter.water + state.filter.time}'`;
 
     // Define a feature layer to use
     const feature = new FeatureLayer({
@@ -113,7 +114,7 @@ function createMap(state) {
         renderer: featureStyle,
         labelingInfo: featureLabels,
         popupTemplate: popupTemplate,
-        // definitionExpression: featureFilter
+        definitionExpression: featureFilter
     });
 
     // Add feature to map
