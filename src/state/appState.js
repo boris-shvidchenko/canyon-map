@@ -13,7 +13,7 @@ export const initialState = {
     screenHeight: null,
     screenWidth: null,
     twoDimensional: true,
-    filter: {tech: '3', water: 'A', time: 'III'}
+    filter: {tech: null, water: null, time:  null}
 };
 
 // Reducer function setup
