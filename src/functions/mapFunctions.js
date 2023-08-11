@@ -102,7 +102,7 @@ function createMap(state) {
         }
     };
 
-    // Filter to use with the feature layer
+    // Add a filter, if selected by user
     const featureFilter = obtainFilter(state);
 
     // Define a feature layer to use
@@ -137,18 +137,18 @@ function createMap(state) {
 function obtainFilter(state) {
     if (state.filter.tech === null && state.filter.water === null && state.filter.time === null) {
         return null;
-    } else if (state.filter.tech === null) {
-        return `Rating = '2${state.filter.water}${state.filter.time}' OR Rating = '3${state.filter.water}${state.filter.time}' OR Rating = '4${state.filter.water}${state.filter.time}'`;
-    } else if (state.filter.water === null) {
-        return `Rating = '${state.filter.tech}A${state.filter.time}' OR Rating = '${state.filter.tech}B${state.filter.time}' OR Rating = '${state.filter.tech}C${state.filter.time}'`;
-    } else if (state.filter.time === null) {
-        return `Rating = '${state.filter.tech}${state.filter.water}I' OR Rating = '${state.filter.tech}${state.filter.water}II' OR Rating = '${state.filter.tech}${state.filter.water}III' OR Rating = '${state.filter.tech}${state.filter.water}IV' OR Rating = '${state.filter.tech}${state.filter.water}V' OR Rating = '${state.filter.tech}${state.filter.water}VI'`;
     } else if (state.filter.tech === null && state.filter.water === null) {
         return `Rating = '2A${state.filter.time}' OR Rating = '2B${state.filter.time}' OR Rating = '2C${state.filter.time}' OR Rating = '3A${state.filter.time}' OR Rating = '3B${state.filter.time}' OR Rating = '3C${state.filter.time}' OR Rating = '4A${state.filter.time}' OR Rating = '4B${state.filter.time}' OR Rating = '4C${state.filter.time}'`;
     } else if (state.filter.tech === null && state.filter.time === null) { 
         return `Rating = '2${state.filter.water}I' OR Rating = '2${state.filter.water}II' OR Rating = '2${state.filter.water}III' OR Rating = '2${state.filter.water}IV' OR Rating = '2${state.filter.water}V' OR Rating = '2${state.filter.water}VI' OR Rating = '3${state.filter.water}I' OR Rating = '3${state.filter.water}II' OR Rating = '3${state.filter.water}III' OR Rating = '3${state.filter.water}IV' OR Rating = '3${state.filter.water}V' OR Rating = '3${state.filter.water}VI' OR Rating = '4${state.filter.water}I' OR Rating = '4${state.filter.water}II' OR Rating = '4${state.filter.water}III' OR Rating = '4${state.filter.water}IV' OR Rating = '4${state.filter.water}V' OR Rating = '4${state.filter.water}VI'`;
     } else if (state.filter.water === null && state.filter.time === null) {
         return `Rating = '${state.filter.tech}AI' OR Rating = '${state.filter.tech}AII' OR Rating = '${state.filter.tech}AIII' OR Rating = '${state.filter.tech}AIV' OR Rating = '${state.filter.tech}AV' OR Rating = '${state.filter.tech}AVI' OR Rating = '${state.filter.tech}BI' OR Rating = '${state.filter.tech}BII' OR Rating = '${state.filter.tech}BIII' OR Rating = '${state.filter.tech}BIV' OR Rating = '${state.filter.tech}BV' OR Rating = '${state.filter.tech}BVI' OR Rating = '${state.filter.tech}CI' OR Rating = '${state.filter.tech}CII' OR Rating = '${state.filter.tech}CIII' OR Rating = '${state.filter.tech}CIV' OR Rating = '${state.filter.tech}CV' OR Rating = '${state.filter.tech}CVI'`;
+    } else if (state.filter.tech === null) {
+        return `Rating = '2${state.filter.water}${state.filter.time}' OR Rating = '3${state.filter.water}${state.filter.time}' OR Rating = '4${state.filter.water}${state.filter.time}'`;
+    } else if (state.filter.water === null) {
+        return `Rating = '${state.filter.tech}A${state.filter.time}' OR Rating = '${state.filter.tech}B${state.filter.time}' OR Rating = '${state.filter.tech}C${state.filter.time}'`;
+    } else if (state.filter.time === null) {
+        return `Rating = '${state.filter.tech}${state.filter.water}I' OR Rating = '${state.filter.tech}${state.filter.water}II' OR Rating = '${state.filter.tech}${state.filter.water}III' OR Rating = '${state.filter.tech}${state.filter.water}IV' OR Rating = '${state.filter.tech}${state.filter.water}V' OR Rating = '${state.filter.tech}${state.filter.water}VI'`;
     } else {
         return `Rating = '${state.filter.tech + state.filter.water + state.filter.time}'`;
     }
@@ -158,7 +158,3 @@ export {
     createMap,
     apiConfig
 }
-
-    
-    
-    
