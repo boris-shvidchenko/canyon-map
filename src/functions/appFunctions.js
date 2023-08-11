@@ -3,6 +3,11 @@ function toggleMenu(dispatch) {
     dispatch({ type: 'updateMenuIconVisibility' });
 } 
 
+// Open/close filter
+function toggleFilter(dispatch) {
+    dispatch({ type: 'updateFilterIconVisibility' });
+}
+
 // Open/close contact form
 function toggleContact(dispatch) {
     dispatch({ type: 'updateContactFormVisibility' });
@@ -50,6 +55,7 @@ function trackLoading() {
 
 export {
     toggleMenu,
+    toggleFilter,
     toggleContact,
     updateContactFormData,
     submitForm,

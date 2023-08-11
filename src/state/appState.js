@@ -10,6 +10,7 @@ export const initialState = {
     contactFormVisible: false,
     isLoading: true,
     menuIconVisible: true,
+    filterIconVisible: true,
     screenHeight: null,
     screenWidth: null,
     twoDimensional: true,
@@ -27,6 +28,8 @@ export default function reducer(state, action) {
         return {...state, twoDimensional: action.twoDimensional}
       case 'updateMenuIconVisibility':
         return {...state, menuIconVisible: !state.menuIconVisible}
+      case 'updateFilterIconVisibility':
+        return {...state, filterIconVisible: !state.filterIconVisible}
       case 'updateContactFormVisibility':
         return {...state, contactFormVisible: !state.contactFormVisible}
       case 'updateContactFormData':
