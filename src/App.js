@@ -4,6 +4,7 @@ import BasemapContainer from './components/BasemapContainer';
 import MapTypeContainer from './components/MapTypeContainer';
 import Menu from './components/Menu';
 import ContactForm from './components/ContactForm';
+import Filter from './components/Filter';
 // Provider
 import AppProvider from './state/appProvider';
 // Vercel Analytics (Audience)
@@ -15,6 +16,7 @@ export default function App() {
     <AppProvider>
       <MainMap />
       <Menu />
+      <Filter />
       <ContactForm />
       <BasemapContainer />
       <MapTypeContainer />

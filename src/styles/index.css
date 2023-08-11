@@ -138,4 +138,13 @@ body {
     .contact-form-scrollbar {
         @apply resize-none scrollbar-thin scrollbar-thumb-[#8a8a8a]
     }
+
+    /* Filter Container */
+    .filter-icon-container {
+        @apply absolute top-20 right-[1.85rem] bg-[#404040] p-1 rounded-sm
+    }
+    .filter-icon {
+        @apply w-6 h-6 cursor-pointer text-white hover:text-[#ff6a00]
+    }
+
 }
