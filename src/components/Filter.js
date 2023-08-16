@@ -19,6 +19,8 @@ export default function Filter() {
     const width = state.screenWidth < 390 && 'w-screen h-screen overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
     const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
 
+    // Input references
+    
     return (
         <div>
             <div onClick={() => toggleFilter(dispatch)} className={`${filterIcon} filter-icon-container`}>
@@ -113,3 +115,13 @@ export default function Filter() {
     )
 
 }
+
+// To Do:
+// 1. Add functions that track inputs, allow only one input to be selected.
+// ref link > https://stackoverflow.com/questions/70854767/use-only-one-checkbox-from-two
+// 2. Apply function (make copies) to other input sections and move functions to appFunctions.js
+// 3. Add clear button.
+// 4. Clean up form, find a better way to orient inputs to avoid individual adjustments, ex: left-[1rem](?)
+// 5. Work on responsiveness and confirm styles look great for various screen sizes 
+// 6. Finalize styles and move them to index.css as custom tailwind variables
+// 7. Connect to state to apply filters to map
