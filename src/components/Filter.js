@@ -23,12 +23,24 @@ export default function Filter() {
     const techFilter2 = useRef();
     const techFilter3 = useRef();
     const techFilter4 = useRef();
+    const techFilterArray = [techFilter2, techFilter3, techFilter4];
+    const waterFilterA = useRef();
+    const waterFilterB = useRef();
+    const waterFilterC = useRef();
+    const waterFilterArray = [waterFilterA, waterFilterB, waterFilterC];
+    const timeFilterI = useRef();
+    const timeFilterII = useRef();
+    const timeFilterIII = useRef();
+    const timeFilterIV = useRef();
+    const timeFilterV = useRef();
+    const timeFilterVI = useRef();
+    const timeFilterArray = [timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI];
 
-    function updateTechFilter(event) {
-        const techFilterArray = [techFilter2, techFilter3, techFilter4];
-        techFilterArray.forEach(i => i.current.checked = false);
-        const techRatingToUpdate = techFilterArray.filter(i => i.current.id === event.target.id);
-        techRatingToUpdate[0].current.checked = true;
+    function updateTechFilter(event, list) {
+        // const techFilterArray = [techFilter2, techFilter3, techFilter4];
+        list.forEach(i => i.current.checked = false);
+        const itemToUpdate = list.filter(i => i.current.id === event.target.id);
+        itemToUpdate[0].current.checked = true;
     }
     
     return (
@@ -49,15 +61,15 @@ export default function Filter() {
                             <div className='flex space-x-3'>
                                 <section className='flex w-36 justify-around'>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='two' className='rounded-none' onClick={(e) => updateTechFilter(e)} ref={techFilter2} />
+                                        <input type='checkbox' id='two' className='rounded-none' onClick={(e) => updateTechFilter(e, techFilterArray)} ref={techFilter2} />
                                         <label htmlFor='' className='text-white'>2</label>
                                     </section>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='three' className='rounded-none' onClick={(e) => updateTechFilter(e)} ref={techFilter3} />
+                                        <input type='checkbox' id='three' className='rounded-none' onClick={(e) => updateTechFilter(e, techFilterArray)} ref={techFilter3} />
                                         <label className='text-white'>3</label>
                                     </section>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='four' className='rounded-none' onClick={(e) => updateTechFilter(e)} ref={techFilter4} />
+                                        <input type='checkbox' id='four' className='rounded-none' onClick={(e) => updateTechFilter(e, techFilterArray)} ref={techFilter4} />
                                         <label className='text-white'>4</label>
                                     </section>
                                 </section>
@@ -68,15 +80,15 @@ export default function Filter() {
                             <div className='flex space-x-3'>
                                 <section className='flex w-36 justify-around relative left-[1px]'>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='' className='rounded-none' />
+                                        <input type='checkbox' id='A' className='rounded-none' onClick={(e) => updateTechFilter(e, waterFilterArray)} ref={waterFilterA}  />
                                         <label className='text-white'>A</label>
                                     </section>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='' className='rounded-none' />
+                                        <input type='checkbox' id='B' className='rounded-none' onClick={(e) => updateTechFilter(e, waterFilterArray)} ref={waterFilterB}  />
                                         <label className='text-white'>B</label>
                                     </section>
                                     <section className='space-x-1 relative left-[1px]'>
-                                        <input type='checkbox' id='' className='rounded-none' />
+                                        <input type='checkbox' id='C' className='rounded-none' onClick={(e) => updateTechFilter(e, waterFilterArray)} ref={waterFilterC}  />
                                         <label className='text-white'>C</label>
                                     </section>
                                 </section>
@@ -88,29 +100,29 @@ export default function Filter() {
                                 <div>
                                     <section className='flex w-36 justify-around relative left-[0.25rem]'>
                                         <section className='space-x-1 relative right-[4px]'>
-                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <input type='checkbox' id='I' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterI}  />
                                             <label className='text-white'>I</label>
                                         </section>
                                         <section className='space-x-1 relative'>
-                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <input type='checkbox' id='II' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterII}  />
                                             <label className='text-white'>II</label>
                                         </section>
                                         <section className='space-x-1'>
-                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <input type='checkbox' id='III' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterIII}  />
                                             <label className='text-white'>III</label>
                                         </section>
                                     </section>
                                     <section className='flex w-36 justify-around relative left-[0.23rem]'>
                                         <section className='space-x-1 relative right-[0.1rem]'>
-                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <input type='checkbox' id='IV' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterIV}  />
                                             <label className='text-white'>IV</label>
                                         </section>
                                         <section className='space-x-1 relative right-[0.2rem]'>
-                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <input type='checkbox' id='V' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterV}  />
                                             <label className='text-white'>V</label>
                                         </section>
                                         <section className='space-x-1'>
-                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <input type='checkbox' id='VI' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterVI}  />
                                             <label className='text-white'>VI</label>
                                         </section>
                                     </section>
