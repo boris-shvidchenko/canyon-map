@@ -31,67 +31,73 @@ export default function Filter() {
                 </section>
                 <section>
                     <p className='menu-text'>Search canyons by ratings:</p>
-                    <form className=''>
-                        <section className='flex items-center space-x-5'>
-                            <h3 className='text-white'>Technichal</h3>
+                    <form>
+                        <section className='flex items-center w-56'>
+                            <h3 className='text-white flex-1'>Technical</h3>
                             <div className='flex space-x-3'>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>2</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                </section>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>3</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                </section>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>4</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                </section>
-                            </div>
-                        </section>
-                        <section className='flex items-center space-x-5'>
-                            <h3 className='text-white'>Water</h3>
-                            <div  className='flex space-x-3'>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>A</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                </section>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>B</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                </section>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>C</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                <section className='flex w-36 justify-around'>
+                                    <section className='space-x-1'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>2</label>
+                                    </section>
+                                    <section className='space-x-1'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>3</label>
+                                    </section>
+                                    <section className='space-x-1'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>4</label>
+                                    </section>
                                 </section>
                             </div>
                         </section>
-                        <section className='flex items-center space-x-5'>
-                            <h3 className='text-white'>Time</h3>
-                            <div  className='flex space-x-3'>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>I</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                        <section className='flex items-center w-56'>
+                            <h3 className='text-white flex-1'>Water</h3>
+                            <div className='flex space-x-3'>
+                                <section className='flex w-36 justify-around relative left-[1px]'>
+                                    <section className='space-x-1'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>A</label>
+                                    </section>
+                                    <section className='space-x-1'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>B</label>
+                                    </section>
+                                    <section className='space-x-1 relative left-[1px]'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>C</label>
+                                    </section>
                                 </section>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>II</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                </section>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>III</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                </section>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>IV</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                </section>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>V</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                </section>
-                                <section className='space-x-1'>
-                                    <label htmlFor='' className='text-white'>VI</label>
-                                    <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                            </div>
+                        </section>
+                        <section className='flex w-96'>
+                            <h3 className='text-white flex-1'>Time</h3>
+                            <div className='flex space-x-3'>
+                                <section className='flex w-72 justify-around relative right-[0.4rem]'>
+                                    <section className='space-x-1 relative right-[9px]'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>I</label>
+                                    </section>
+                                    <section className='space-x-1 relative right-[2px]'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>II</label>
+                                    </section>
+                                    <section className='space-x-1'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>III</label>
+                                    </section>
+                                    <section className='space-x-1'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>IV</label>
+                                    </section>
+                                    <section className='space-x-1'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>V</label>
+                                    </section>
+                                    <section className='space-x-1'>
+                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <label htmlFor='' className='text-white'>VI</label>
+                                    </section>
                                 </section>
                             </div>
                         </section>
