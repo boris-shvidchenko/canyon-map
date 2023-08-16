@@ -70,35 +70,39 @@ export default function Filter() {
                                 </section>
                             </div>
                         </section>
-                        <section className='flex w-96'>
+                        <section className='flex w-56'>
                             <h3 className='text-white flex-1'>Time</h3>
                             <div className='flex space-x-3'>
-                                <section className='flex w-72 justify-around relative right-[0.4rem]'>
-                                    <section className='space-x-1 relative right-[9px]'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>I</label>
+                                <div>
+                                    <section className='flex w-36 justify-around relative left-[0.25rem]'>
+                                        <section className='space-x-1 relative right-[4px]'>
+                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                            <label htmlFor='' className='text-white'>I</label>
+                                        </section>
+                                        <section className='space-x-1 relative'>
+                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                            <label htmlFor='' className='text-white'>II</label>
+                                        </section>
+                                        <section className='space-x-1'>
+                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                            <label htmlFor='' className='text-white'>III</label>
+                                        </section>
                                     </section>
-                                    <section className='space-x-1 relative right-[2px]'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>II</label>
+                                    <section className='flex w-36 justify-around relative left-[0.23rem]'>
+                                        <section className='space-x-1 relative right-[0.1rem]'>
+                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                            <label htmlFor='' className='text-white'>IV</label>
+                                        </section>
+                                        <section className='space-x-1 relative right-[0.2rem]'>
+                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                            <label htmlFor='' className='text-white'>V</label>
+                                        </section>
+                                        <section className='space-x-1'>
+                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                            <label htmlFor='' className='text-white'>VI</label>
+                                        </section>
                                     </section>
-                                    <section className='space-x-1'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>III</label>
-                                    </section>
-                                    <section className='space-x-1'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>IV</label>
-                                    </section>
-                                    <section className='space-x-1'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>V</label>
-                                    </section>
-                                    <section className='space-x-1'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>VI</label>
-                                    </section>
-                                </section>
+                                </div>
                             </div>
                         </section>
                         {/* CLEAR BUTTON HERE */}
