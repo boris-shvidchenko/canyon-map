@@ -1,5 +1,5 @@
 // Hooks
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 // Context
 import { Context } from '../state/appState';
 // Heroicons
@@ -20,6 +20,16 @@ export default function Filter() {
     const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
 
     // Input references
+    const techFilter2 = useRef();
+    const techFilter3 = useRef();
+    const techFilter4 = useRef();
+
+    function updateTechFilter(event) {
+        const techFilterArray = [techFilter2, techFilter3, techFilter4];
+        techFilterArray.forEach(i => i.current.checked = false);
+        const techRatingToUpdate = techFilterArray.filter(i => i.current.id === event.target.id);
+        techRatingToUpdate[0].current.checked = true;
+    }
     
     return (
         <div>
@@ -39,16 +49,16 @@ export default function Filter() {
                             <div className='flex space-x-3'>
                                 <section className='flex w-36 justify-around'>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
+                                        <input type='checkbox' id='two' className='rounded-none' onClick={(e) => updateTechFilter(e)} ref={techFilter2} />
                                         <label htmlFor='' className='text-white'>2</label>
                                     </section>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>3</label>
+                                        <input type='checkbox' id='three' className='rounded-none' onClick={(e) => updateTechFilter(e)} ref={techFilter3} />
+                                        <label className='text-white'>3</label>
                                     </section>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>4</label>
+                                        <input type='checkbox' id='four' className='rounded-none' onClick={(e) => updateTechFilter(e)} ref={techFilter4} />
+                                        <label className='text-white'>4</label>
                                     </section>
                                 </section>
                             </div>
@@ -58,16 +68,16 @@ export default function Filter() {
                             <div className='flex space-x-3'>
                                 <section className='flex w-36 justify-around relative left-[1px]'>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>A</label>
+                                        <input type='checkbox' id='' className='rounded-none' />
+                                        <label className='text-white'>A</label>
                                     </section>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>B</label>
+                                        <input type='checkbox' id='' className='rounded-none' />
+                                        <label className='text-white'>B</label>
                                     </section>
                                     <section className='space-x-1 relative left-[1px]'>
-                                        <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                        <label htmlFor='' className='text-white'>C</label>
+                                        <input type='checkbox' id='' className='rounded-none' />
+                                        <label className='text-white'>C</label>
                                     </section>
                                 </section>
                             </div>
@@ -78,30 +88,30 @@ export default function Filter() {
                                 <div>
                                     <section className='flex w-36 justify-around relative left-[0.25rem]'>
                                         <section className='space-x-1 relative right-[4px]'>
-                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                            <label htmlFor='' className='text-white'>I</label>
+                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <label className='text-white'>I</label>
                                         </section>
                                         <section className='space-x-1 relative'>
-                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                            <label htmlFor='' className='text-white'>II</label>
+                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <label className='text-white'>II</label>
                                         </section>
                                         <section className='space-x-1'>
-                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                            <label htmlFor='' className='text-white'>III</label>
+                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <label className='text-white'>III</label>
                                         </section>
                                     </section>
                                     <section className='flex w-36 justify-around relative left-[0.23rem]'>
                                         <section className='space-x-1 relative right-[0.1rem]'>
-                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                            <label htmlFor='' className='text-white'>IV</label>
+                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <label className='text-white'>IV</label>
                                         </section>
                                         <section className='space-x-1 relative right-[0.2rem]'>
-                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                            <label htmlFor='' className='text-white'>V</label>
+                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <label className='text-white'>V</label>
                                         </section>
                                         <section className='space-x-1'>
-                                            <input type='checkbox' id='' name='' value='' className='rounded-none' />
-                                            <label htmlFor='' className='text-white'>VI</label>
+                                            <input type='checkbox' id='' className='rounded-none' />
+                                            <label className='text-white'>VI</label>
                                         </section>
                                     </section>
                                 </div>
