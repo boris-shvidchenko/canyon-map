@@ -113,7 +113,7 @@ export default function Filter() {
                                 </div>
                             </div>
                         </section>
-                        {/* CLEAR BUTTON HERE */}
+                        <div className='menu-button'>Apply</div>
                     </form>
                 </section>
             </div>
@@ -123,8 +123,6 @@ export default function Filter() {
 }
 
 // To Do:
-// 2. Move functions to appFunctions.js
-// 3. Add clear button.
 // 4. Clean up form, find a better way to orient inputs to avoid individual adjustments, ex: left-[1rem](?)
 // 5. Work on responsiveness and confirm styles look great for various screen sizes 
 // 6. Finalize styles and move them to index.css as custom tailwind variables
