@@ -37,9 +37,9 @@ export default function Filter() {
     const timeFilterArray = [timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI];
 
     function updateTechFilter(event, list) {
-        list.forEach(i => i.current.checked = false);
-        const itemToUpdate = list.filter(i => i.current.id === event.target.id);
-        itemToUpdate[0].current.checked = true;
+        list.forEach(i => {
+            if (i.current.id !== event.target.id) i.current.checked = false;
+        });
     }
     
     return (
@@ -138,7 +138,7 @@ export default function Filter() {
 }
 
 // To Do:
-// 1. BUG: When clicking on already selected checkbox, it stays selected. Fix this. Try to remove number of lines where ref variables are defined, can I define them in a single row all at once?
+// 1. Try to remove number of lines where ref variables are defined, can I define them in a single row all at once?
 // 2. Move functions to appFunctions.js
 // 3. Add clear button.
 // 4. Clean up form, find a better way to orient inputs to avoid individual adjustments, ex: left-[1rem](?)
