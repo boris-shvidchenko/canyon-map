@@ -5,7 +5,7 @@ import { Context } from '../state/appState';
 // Heroicons
 import { FunnelIcon, XMarkIcon } from '@heroicons/react/24/solid';
 // Functions
-import { toggleFilter } from '../functions/appFunctions';
+import { toggleFilter, updateFilter } from '../functions/appFunctions';
 
 export default function Filter() {
 
@@ -20,27 +20,12 @@ export default function Filter() {
     const height = state.screenHeight < 660 && 'h-screen overflow-y-scroll scrollbar-thin scrollbar-thumb-[#8a8a8a] pb-6';
 
     // Input references
-    const techFilter2 = useRef();
-    const techFilter3 = useRef();
-    const techFilter4 = useRef();
+    const [techFilter2, techFilter3, techFilter4] = [useRef(), useRef(), useRef()];
     const techFilterArray = [techFilter2, techFilter3, techFilter4];
-    const waterFilterA = useRef();
-    const waterFilterB = useRef();
-    const waterFilterC = useRef();
+    const [waterFilterA, waterFilterB, waterFilterC] = [useRef(), useRef(), useRef()];
     const waterFilterArray = [waterFilterA, waterFilterB, waterFilterC];
-    const timeFilterI = useRef();
-    const timeFilterII = useRef();
-    const timeFilterIII = useRef();
-    const timeFilterIV = useRef();
-    const timeFilterV = useRef();
-    const timeFilterVI = useRef();
+    const [timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI] = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
     const timeFilterArray = [timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI];
-
-    function updateTechFilter(event, list) {
-        list.forEach(i => {
-            if (i.current.id !== event.target.id) i.current.checked = false;
-        });
-    }
     
     return (
         <div>
@@ -60,15 +45,15 @@ export default function Filter() {
                             <div className='flex space-x-3'>
                                 <section className='flex w-36 justify-around'>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='two' className='rounded-none' onClick={(e) => updateTechFilter(e, techFilterArray)} ref={techFilter2} />
+                                        <input type='checkbox' id='two' className='rounded-none' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter2} />
                                         <label htmlFor='' className='text-white'>2</label>
                                     </section>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='three' className='rounded-none' onClick={(e) => updateTechFilter(e, techFilterArray)} ref={techFilter3} />
+                                        <input type='checkbox' id='three' className='rounded-none' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter3} />
                                         <label className='text-white'>3</label>
                                     </section>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='four' className='rounded-none' onClick={(e) => updateTechFilter(e, techFilterArray)} ref={techFilter4} />
+                                        <input type='checkbox' id='four' className='rounded-none' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter4} />
                                         <label className='text-white'>4</label>
                                     </section>
                                 </section>
@@ -79,15 +64,15 @@ export default function Filter() {
                             <div className='flex space-x-3'>
                                 <section className='flex w-36 justify-around relative left-[1px]'>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='A' className='rounded-none' onClick={(e) => updateTechFilter(e, waterFilterArray)} ref={waterFilterA}  />
+                                        <input type='checkbox' id='A' className='rounded-none' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterA}  />
                                         <label className='text-white'>A</label>
                                     </section>
                                     <section className='space-x-1'>
-                                        <input type='checkbox' id='B' className='rounded-none' onClick={(e) => updateTechFilter(e, waterFilterArray)} ref={waterFilterB}  />
+                                        <input type='checkbox' id='B' className='rounded-none' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterB}  />
                                         <label className='text-white'>B</label>
                                     </section>
                                     <section className='space-x-1 relative left-[1px]'>
-                                        <input type='checkbox' id='C' className='rounded-none' onClick={(e) => updateTechFilter(e, waterFilterArray)} ref={waterFilterC}  />
+                                        <input type='checkbox' id='C' className='rounded-none' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterC}  />
                                         <label className='text-white'>C</label>
                                     </section>
                                 </section>
@@ -99,29 +84,29 @@ export default function Filter() {
                                 <div>
                                     <section className='flex w-36 justify-around relative left-[0.25rem]'>
                                         <section className='space-x-1 relative right-[4px]'>
-                                            <input type='checkbox' id='I' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterI}  />
+                                            <input type='checkbox' id='I' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterI}  />
                                             <label className='text-white'>I</label>
                                         </section>
                                         <section className='space-x-1 relative'>
-                                            <input type='checkbox' id='II' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterII}  />
+                                            <input type='checkbox' id='II' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterII}  />
                                             <label className='text-white'>II</label>
                                         </section>
                                         <section className='space-x-1'>
-                                            <input type='checkbox' id='III' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterIII}  />
+                                            <input type='checkbox' id='III' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterIII}  />
                                             <label className='text-white'>III</label>
                                         </section>
                                     </section>
                                     <section className='flex w-36 justify-around relative left-[0.23rem]'>
                                         <section className='space-x-1 relative right-[0.1rem]'>
-                                            <input type='checkbox' id='IV' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterIV}  />
+                                            <input type='checkbox' id='IV' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterIV}  />
                                             <label className='text-white'>IV</label>
                                         </section>
                                         <section className='space-x-1 relative right-[0.2rem]'>
-                                            <input type='checkbox' id='V' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterV}  />
+                                            <input type='checkbox' id='V' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterV}  />
                                             <label className='text-white'>V</label>
                                         </section>
                                         <section className='space-x-1'>
-                                            <input type='checkbox' id='VI' className='rounded-none' onClick={(e) => updateTechFilter(e, timeFilterArray)} ref={timeFilterVI}  />
+                                            <input type='checkbox' id='VI' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterVI}  />
                                             <label className='text-white'>VI</label>
                                         </section>
                                     </section>
@@ -138,7 +123,6 @@ export default function Filter() {
 }
 
 // To Do:
-// 1. Try to remove number of lines where ref variables are defined, can I define them in a single row all at once?
 // 2. Move functions to appFunctions.js
 // 3. Add clear button.
 // 4. Clean up form, find a better way to orient inputs to avoid individual adjustments, ex: left-[1rem](?)

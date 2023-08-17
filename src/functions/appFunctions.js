@@ -13,6 +13,13 @@ function toggleContact(dispatch) {
     dispatch({ type: 'updateContactFormVisibility' });
 }
 
+// Update filter selections
+function updateFilter(event, list) {
+    list.forEach(i => {
+        if (i.current.id !== event.target.id) i.current.checked = false;
+    });
+}
+
 // Update contact form data
 function updateContactFormData(dispatch, state, event) {
     dispatch({ 
@@ -57,6 +64,7 @@ export {
     toggleMenu,
     toggleFilter,
     toggleContact,
+    updateFilter,
     updateContactFormData,
     submitForm,
     updateBasemap,
