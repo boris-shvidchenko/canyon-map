@@ -37,7 +37,6 @@ export default function Filter() {
     const timeFilterArray = [timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI];
 
     function updateTechFilter(event, list) {
-        // const techFilterArray = [techFilter2, techFilter3, techFilter4];
         list.forEach(i => i.current.checked = false);
         const itemToUpdate = list.filter(i => i.current.id === event.target.id);
         itemToUpdate[0].current.checked = true;
@@ -139,9 +138,8 @@ export default function Filter() {
 }
 
 // To Do:
-// 1. Add functions that track inputs, allow only one input to be selected.
-// ref link > https://stackoverflow.com/questions/70854767/use-only-one-checkbox-from-two
-// 2. Apply function (make copies) to other input sections and move functions to appFunctions.js
+// 1. BUG: When clicking on already selected checkbox, it stays selected. Fix this. Try to remove number of lines where ref variables are defined, can I define them in a single row all at once?
+// 2. Move functions to appFunctions.js
 // 3. Add clear button.
 // 4. Clean up form, find a better way to orient inputs to avoid individual adjustments, ex: left-[1rem](?)
 // 5. Work on responsiveness and confirm styles look great for various screen sizes 
