@@ -37,63 +37,63 @@ export default function Filter() {
                     <p className='text-[#ff6a00]'>Add Filter</p>
                     <XMarkIcon onClick={() => toggleFilter(dispatch)} className='menu-x' />
                 </section>
-                <section>
+                <section className='ml-8 pt-4'>
                     <p className='menu-text'>Search canyons by ratings:</p>
-                    <div className='grid grid-cols-4 gap-2'>
-                        <h3 className='text-white'>Technical</h3>
-                        <section className='space-x-2'>
-                            <input type='checkbox' id='two' className='rounded-none' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter2} />
-                            <label htmlFor='' className='text-white'>2</label>
+                    <div className='grid grid-cols-5 w-64 pt-2'>
+                        <h3 className='text-[#fff] text-sm'>Technical</h3>
+                        <section className='space-x-2 col-start-3'>
+                            <input type='checkbox' id='two' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter2} />
+                            <label htmlFor='' className='text-[#fff] text-sm'>2</label>
                         </section>
                         <section className='space-x-2'>
-                            <input type='checkbox' id='three' className='rounded-none' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter3} />
-                            <label className='text-white'>3</label>
+                            <input type='checkbox' id='three' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter3} />
+                            <label className='text-[#fff] text-sm'>3</label>
                         </section>
                         <section className='space-x-2'>
-                            <input type='checkbox' id='four' className='rounded-none' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter4} />
-                            <label className='text-white'>4</label>
+                            <input type='checkbox' id='four' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter4} />
+                            <label className='text-[#fff] text-sm'>4</label>
                         </section>
-                        <h3 className='text-white'>Water</h3>
-                        <section className='space-x-2'>
-                            <input type='checkbox' id='A' className='rounded-none' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterA}  />
-                            <label className='text-white'>A</label>
-                        </section>
-                        <section className='space-x-2'>
-                            <input type='checkbox' id='B' className='rounded-none' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterB}  />
-                            <label className='text-white'>B</label>
+                        <h3 className='text-[#fff] text-sm'>Water</h3>
+                        <section className='space-x-2 col-start-3'>
+                            <input type='checkbox' id='A' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterA}  />
+                            <label className='text-[#fff] text-sm'>A</label>
                         </section>
                         <section className='space-x-2'>
-                            <input type='checkbox' id='C' className='rounded-none' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterC}  />
-                            <label className='text-white'>C</label>
-                        </section>
-                        <h3 className='text-white'>Time</h3>
-                        <section className='space-x-2'>
-                            <input type='checkbox' id='I' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterI}  />
-                            <label className='text-white'>I</label>
+                            <input type='checkbox' id='B' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterB}  />
+                            <label className='text-[#fff] text-sm'>B</label>
                         </section>
                         <section className='space-x-2'>
-                            <input type='checkbox' id='II' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterII}  />
-                            <label className='text-white'>II</label>
+                            <input type='checkbox' id='C' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterC}  />
+                            <label className='text-[#fff] text-sm'>C</label>
+                        </section>
+                        <h3 className='text-[#fff] text-sm'>Time</h3>
+                        <section className='space-x-2 col-start-3'>
+                            <input type='checkbox' id='I' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterI}  />
+                            <label className='text-[#fff] text-sm'>I</label>
                         </section>
                         <section className='space-x-2'>
-                            <input type='checkbox' id='III' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterIII}  />
-                            <label className='text-white'>III</label>
-                        </section>
-                        <section className='space-x-2 col-start-2'>
-                            <input type='checkbox' id='IV' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterIV}  />
-                            <label className='text-white'>IV</label>
+                            <input type='checkbox' id='II' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterII}  />
+                            <label className='text-[#fff] text-sm'>II</label>
                         </section>
                         <section className='space-x-2'>
-                            <input type='checkbox' id='V' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterV}  />
-                            <label className='text-white'>V</label>
+                            <input type='checkbox' id='III' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterIII}  />
+                            <label className='text-[#fff] text-sm'>III</label>
+                        </section>
+                        <section className='space-x-2 col-start-3'>
+                            <input type='checkbox' id='IV' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterIV}  />
+                            <label className='text-[#fff] text-sm'>IV</label>
                         </section>
                         <section className='space-x-2'>
-                            <input type='checkbox' id='VI' className='rounded-none' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterVI}  />
-                            <label className='text-white'>VI</label>
+                            <input type='checkbox' id='V' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterV}  />
+                            <label className='text-[#fff] text-sm'>V</label>
+                        </section>
+                        <section className='space-x-2'>
+                            <input type='checkbox' id='VI' className='rounded-none cursor-pointer' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterVI}  />
+                            <label className='text-[#fff] text-sm'>VI</label>
                         </section>
                     </div>
-                        {/* <div className='menu-button'>Apply</div> */}
-                    </section>
+                </section>
+                <div className='menu-button'>Apply</div>
             </div>
         </div>
     )
