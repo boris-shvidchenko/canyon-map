@@ -147,7 +147,7 @@ body {
         @apply w-6 h-6 cursor-pointer text-white hover:text-[#ff6a00]
     }
     .filter-container {
-        @apply duration-100 ease-in-out w-96 h-[18.7rem] bg-[#404040] z-10 rounded-sm shadow-lg drop-shadow-md
+        @apply duration-100 ease-in-out w-96 h-[18.5rem] bg-[#404040] z-10 rounded-sm shadow-lg drop-shadow-md
     }
     .filter-container-section {
         @apply flex justify-between items-center w-full px-8 pt-4 pb-3 bg-[#303030] border-b border-[#8a8a8a] text-lg font-semibold header-font
