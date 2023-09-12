@@ -105,7 +105,5 @@ export default function Filter() {
 }
 
 // To Do:
-// 4. Clean up form
-// 5. Work on responsiveness and confirm styles look great for various screen sizes 
 // 6. Finalize styles and move them to index.css as custom tailwind variables
 // 7. Connect to state to apply filters to map
