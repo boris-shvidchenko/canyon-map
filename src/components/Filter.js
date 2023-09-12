@@ -39,7 +39,7 @@ export default function Filter() {
                 </section>
                 <section className='ml-8 pt-4'>
                     <p className='menu-text'>Search canyons by their ratings:</p>
-                    <div className={`grid grid-cols-5 gap-1 ${state.screenWidth < 300 ? '' : 'w-64'} pt-2`}>
+                    <div className={`grid grid-cols-5 gap-1 ${state.screenWidth > 300 && 'w-64'} pt-2`}>
                         <h3 className='text-[#fff] text-sm'>Technical</h3>
                         <section className={`${state.screenWidth < 300 ? 'space-x-1' : 'space-x-2'} flex col-start-3`}>
                             <input type='checkbox' id='two' className='cursor-pointer accent-[#ff6a00]' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter2} />
@@ -107,3 +107,4 @@ export default function Filter() {
 // To Do:
 // 6. Finalize styles and move them to index.css as custom tailwind variables
 // 7. Connect to state to apply filters to map
+// 8. Connect the 'clear' button to remove all checks
