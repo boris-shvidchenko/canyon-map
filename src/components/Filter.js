@@ -108,5 +108,4 @@ export default function Filter() {
 
 // To Do:
 // 1. Connect to state to apply filters to map, clear checks on select of 'Apply'
-// 2. Connect the 'clear' button to remove all checks
-// 3. Optional: if options are selected and user closes window with 'X', deselect?
+// 2. Optional: if options are selected and user closes window with 'X', deselect? <- this caused some bugs when initially tested
