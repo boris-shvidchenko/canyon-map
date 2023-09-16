@@ -152,5 +152,17 @@ body {
     .filter-container-section {
         @apply flex justify-between items-center w-full px-8 pt-4 pb-3 bg-[#303030] border-b border-[#8a8a8a] text-lg font-semibold header-font
     }
+    .filter-grid-div {
+        @apply grid grid-cols-5 gap-1 pt-2
+    }
+    .filter-grid-h3 {
+        @apply text-[#fff] text-sm
+    }
+    .filter-grid-input {
+        @apply cursor-pointer accent-[#ff6a00]
+    }
+    .filter-grid-label {
+        @apply text-[#cfcfcf] text-sm
+    }
 
 }
