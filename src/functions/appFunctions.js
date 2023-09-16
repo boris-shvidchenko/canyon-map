@@ -20,6 +20,14 @@ function updateFilter(event, list) {
     });
 }
 
+// Clear filter
+function clearFilter(list1, list2, list3) {
+    const inputs = [...list1, ...list2, ...list3];
+    inputs.forEach(i => {
+        if (i.current.checked) i.current.checked = false;
+    })
+}
+
 // Update contact form data
 function updateContactFormData(dispatch, state, event) {
     dispatch({ 
@@ -66,6 +74,7 @@ export {
     toggleContact,
     updateFilter,
     updateContactFormData,
+    clearFilter,
     submitForm,
     updateBasemap,
     changeMapType,

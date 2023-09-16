@@ -5,7 +5,7 @@ import { Context } from '../state/appState';
 // Heroicons
 import { FunnelIcon, XMarkIcon } from '@heroicons/react/24/solid';
 // Functions
-import { toggleFilter, updateFilter } from '../functions/appFunctions';
+import { toggleFilter, updateFilter, clearFilter } from '../functions/appFunctions';
 
 export default function Filter() {
 
@@ -98,7 +98,7 @@ export default function Filter() {
                 <hr className='border-[#8a8a8a] mt-4 mx-8' />
                 <section className='flex'>
                     <div className='menu-button px-3 py-1'>Apply</div>
-                    <div className='menu-button px-3 py-1 ml-4'>Clear</div>
+                    <div onClick={() => clearFilter(techFilterArray, waterFilterArray, timeFilterArray)} className='menu-button px-3 py-1 ml-4'>Clear</div>
                 </section>
             </div>
         </div>
