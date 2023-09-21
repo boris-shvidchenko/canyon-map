@@ -13,7 +13,7 @@ export default function MainMap() {
   useEffect(() => {
     apiConfig();
     createMap(state);
-  }, [state.basemap, state.twoDimensional]);
+  }, [state.basemap, state.twoDimensional, state.filter]);
 
   return (
     <div className='h-screen w-full'></div> 

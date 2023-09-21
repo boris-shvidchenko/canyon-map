@@ -11,7 +11,6 @@ export default function Filter() {
 
     // Obtain state from context
     const { state, dispatch } = useContext(Context);
-    console.log(state.filter)
 
     // Styles
     const filterIcon = !state.filterIconVisible && 'hidden';
@@ -24,10 +23,10 @@ export default function Filter() {
 
     // Input references
     const [techFilter2, techFilter3, techFilter4] = [useRef(), useRef(), useRef()];
-    const techInputs = [techFilter2, techFilter3, techFilter4];
     const [waterFilterA, waterFilterB, waterFilterC] = [useRef(), useRef(), useRef()];
-    const waterInputs = [waterFilterA, waterFilterB, waterFilterC];
     const [timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI] = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
+    const techInputs = [techFilter2, techFilter3, techFilter4];
+    const waterInputs = [waterFilterA, waterFilterB, waterFilterC];
     const timeInputs = [timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI];
     const filterInputs = [techFilter2, techFilter3, techFilter4, waterFilterA, waterFilterB, waterFilterC, timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI];
     
@@ -109,6 +108,7 @@ export default function Filter() {
 }
 
 // To Do:
-// 1. Connect to map update.
+// 1. In mainmap function/filter, map gets refreshed anytime apply or clear is clicked. Only refresh when inputs are not empty/null OR when state.filter is not all null. 
+// 1b. Should I add another button or rename the 'Clear', user can get confused as to what 'clear' clears, the map filter or the input selection?
 // 2. Double check filter component, make sure eveything is good before closing this section.
 // 3. Move the default map location of Utah (on load) slightly up to accomodate mobile viewports and look better on desktop.
