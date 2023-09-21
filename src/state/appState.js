@@ -34,6 +34,8 @@ export default function reducer(state, action) {
         return {...state, contactFormVisible: !state.contactFormVisible}
       case 'updateContactFormData':
         return {...state, contactFormData: action.contactFormData}
+      case 'updateFilter':
+        return {...state, filter: action.filter}
       case 'updateScreenWidth':
         return {...state, screenWidth: action.screenWidth}
       case 'updateScreenHeight':

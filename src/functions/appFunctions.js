@@ -20,14 +20,6 @@ function updateFilter(event, list) {
     });
 }
 
-// Clear filter
-function clearFilter(list1, list2, list3) {
-    const inputs = [...list1, ...list2, ...list3];
-    inputs.forEach(i => {
-        if (i.current.checked) i.current.checked = false;
-    })
-}
-
 // Update contact form data
 function updateContactFormData(dispatch, state, event) {
     dispatch({ 
@@ -37,6 +29,25 @@ function updateContactFormData(dispatch, state, event) {
             [event.target.name]: event.target.value
         }
     });
+}
+
+// Clear filter
+function clearFilter(list) {
+    list.forEach(i => {
+        if (i.current.checked) i.current.checked = false;
+    })
+}
+
+// Apply filter
+function applyFilter(list, state, dispatch) {
+
+    const techInput =  list[0].current.checked ? '2' : list[1].current.checked ? '3' : list[2].current.checked ? '4' : null;
+    const waterInput = list[3].current.checked ? 'A' : list[4].current.checked ? 'B' : list[5].current.checked ? 'C' : null;
+    const timeInput = list[6].current.checked ? 'I' : list[7].current.checked ? 'II' : list[8].current.checked ? 'III' : list[9].current.checked ? 'IV' : list[10].current.checked ? 'V' : list[11].current.checked ? 'VI' : null;
+
+    dispatch({ type: 'updateFilter', filter: {tech: techInput, water: waterInput, time: timeInput}});
+
+    console.log(state.filter)
 }
 
 // Submit form
@@ -75,6 +86,7 @@ export {
     updateFilter,
     updateContactFormData,
     clearFilter,
+    applyFilter,
     submitForm,
     updateBasemap,
     changeMapType,

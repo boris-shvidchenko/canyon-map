@@ -16,7 +16,7 @@ export default function App() {
     <AppProvider>
       <MainMap />
       <Menu />
-      {/* <Filter /> */}
+      <Filter />
       <ContactForm />
       <BasemapContainer />
       <MapTypeContainer />

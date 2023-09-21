@@ -5,7 +5,7 @@ import { Context } from '../state/appState';
 // Heroicons
 import { FunnelIcon, XMarkIcon } from '@heroicons/react/24/solid';
 // Functions
-import { toggleFilter, updateFilter, clearFilter } from '../functions/appFunctions';
+import { toggleFilter, updateFilter, clearFilter, applyFilter } from '../functions/appFunctions';
 
 export default function Filter() {
 
@@ -23,11 +23,12 @@ export default function Filter() {
 
     // Input references
     const [techFilter2, techFilter3, techFilter4] = [useRef(), useRef(), useRef()];
-    const techFilterArray = [techFilter2, techFilter3, techFilter4];
+    const techInputs = [techFilter2, techFilter3, techFilter4];
     const [waterFilterA, waterFilterB, waterFilterC] = [useRef(), useRef(), useRef()];
-    const waterFilterArray = [waterFilterA, waterFilterB, waterFilterC];
+    const waterInputs = [waterFilterA, waterFilterB, waterFilterC];
     const [timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI] = [useRef(), useRef(), useRef(), useRef(), useRef(), useRef()];
-    const timeFilterArray = [timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI];
+    const timeInputs = [timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI];
+    const filterInputs = [techFilter2, techFilter3, techFilter4, waterFilterA, waterFilterB, waterFilterC, timeFilterI, timeFilterII, timeFilterIII, timeFilterIV, timeFilterV, timeFilterVI];
     
     return (
         <div>
@@ -44,61 +45,61 @@ export default function Filter() {
                     <div className={`${gridWidth} filter-grid-div`}>
                         <h3 className='filter-grid-h3'>Technical</h3>
                         <section className={`${gridSection} col-start-3`}>
-                            <input type='checkbox' id='two' className='filter-grid-input' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter2} />
+                            <input type='checkbox' id='two' className='filter-grid-input' onClick={(e) => updateFilter(e, techInputs)} ref={techFilter2} />
                             <label htmlFor='' className='filter-grid-label'>2</label>
                         </section>
                         <section className={`${gridSection}`}>
-                            <input type='checkbox' id='three' className='filter-grid-input' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter3} />
+                            <input type='checkbox' id='three' className='filter-grid-input' onClick={(e) => updateFilter(e, techInputs)} ref={techFilter3} />
                             <label className='filter-grid-label'>3</label>
                         </section>
                         <section className={`${gridSection}`}>
-                            <input type='checkbox' id='four' className='filter-grid-input' onClick={(e) => updateFilter(e, techFilterArray)} ref={techFilter4} />
+                            <input type='checkbox' id='four' className='filter-grid-input' onClick={(e) => updateFilter(e, techInputs)} ref={techFilter4} />
                             <label className='filter-grid-label'>4</label>
                         </section>
                         <h3 className='filter-grid-h3'>Water</h3>
                         <section className={`${gridSection} col-start-3`}>
-                            <input type='checkbox' id='A' className='filter-grid-input' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterA}  />
+                            <input type='checkbox' id='A' className='filter-grid-input' onClick={(e) => updateFilter(e, waterInputs)} ref={waterFilterA}  />
                             <label className='filter-grid-label'>A</label>
                         </section>
                         <section className={`${gridSection}`}>
-                            <input type='checkbox' id='B' className='filter-grid-input' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterB}  />
+                            <input type='checkbox' id='B' className='filter-grid-input' onClick={(e) => updateFilter(e, waterInputs)} ref={waterFilterB}  />
                             <label className='filter-grid-label'>B</label>
                         </section>
                         <section className={`${gridSection}`}>
-                            <input type='checkbox' id='C' className='filter-grid-input' onClick={(e) => updateFilter(e, waterFilterArray)} ref={waterFilterC}  />
+                            <input type='checkbox' id='C' className='filter-grid-input' onClick={(e) => updateFilter(e, waterInputs)} ref={waterFilterC}  />
                             <label className='filter-grid-label'>C</label>
                         </section>
                         <h3 className='filter-grid-h3'>Time</h3>
                         <section className={`${gridSection} col-start-3`}>
-                            <input type='checkbox' id='I' className='filter-grid-input' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterI}  />
+                            <input type='checkbox' id='I' className='filter-grid-input' onClick={(e) => updateFilter(e, timeInputs)} ref={timeFilterI}  />
                             <label className='filter-grid-label'>I</label>
                         </section>
                         <section className={`${gridSection}`}>
-                            <input type='checkbox' id='II' className='filter-grid-input' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterII}  />
+                            <input type='checkbox' id='II' className='filter-grid-input' onClick={(e) => updateFilter(e, timeInputs)} ref={timeFilterII}  />
                             <label className='filter-grid-label'>II</label>
                         </section>
                         <section className={`${gridSection}`}>
-                            <input type='checkbox' id='III' className='filter-grid-input' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterIII}  />
+                            <input type='checkbox' id='III' className='filter-grid-input' onClick={(e) => updateFilter(e, timeInputs)} ref={timeFilterIII}  />
                             <label className='filter-grid-label'>III</label>
                         </section>
                         <section className={`${gridSection} col-start-3`}>
-                            <input type='checkbox' id='IV' className='filter-grid-input' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterIV}  />
+                            <input type='checkbox' id='IV' className='filter-grid-input' onClick={(e) => updateFilter(e, timeInputs)} ref={timeFilterIV}  />
                             <label className='filter-grid-label'>IV</label>
                         </section>
                         <section className={`${gridSection}`}>
-                            <input type='checkbox' id='V' className='filter-grid-input' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterV}  />
+                            <input type='checkbox' id='V' className='filter-grid-input' onClick={(e) => updateFilter(e, timeInputs)} ref={timeFilterV}  />
                             <label className='filter-grid-label'>V</label>
                         </section>
                         <section className={`${gridSection}`}>
-                            <input type='checkbox' id='VI' className='filter-grid-input' onClick={(e) => updateFilter(e, timeFilterArray)} ref={timeFilterVI}  />
+                            <input type='checkbox' id='VI' className='filter-grid-input' onClick={(e) => updateFilter(e, timeInputs)} ref={timeFilterVI}  />
                             <label className='filter-grid-label'>VI</label>
                         </section>
                     </div>
                 </section>
                 <hr className='border-[#8a8a8a] mt-4 mx-8' />
                 <section className='flex'>
-                    <div className='menu-button px-3 py-1'>Apply</div>
-                    <div onClick={() => clearFilter(techFilterArray, waterFilterArray, timeFilterArray)} className='menu-button px-3 py-1 ml-4'>Clear</div>
+                    <div onClick={() => applyFilter(filterInputs, state, dispatch)} className='menu-button px-3 py-1'>Apply</div>
+                    <div onClick={() => clearFilter(filterInputs)} className='menu-button px-3 py-1 ml-4'>Clear</div>
                 </section>
             </div>
         </div>
@@ -108,4 +109,8 @@ export default function Filter() {
 
 // To Do:
 // 1. Connect to state to apply filters to map, clear checks on select of 'Apply'
-// 2. Optional: if options are selected and user closes window with 'X', deselect? <- this caused some bugs when initially tested
+// 1b. BUG?: On apply, first click doesnt update state?
+// 2. Optional: if options are selected and user closes window with 'X', deselect? <- this caused some bugs when initially tested.
+// 3. On clear, update filter state to be as default to remove filter. Dont uncheck inputs (?), user can do that manually?
+// 4. Double check filter component, make sure eveything is good before closing this section.
+// 5. Move the default map location of Utah (on load) slightly up to accomodate mobile viewports and look better on desktop.
