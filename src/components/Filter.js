@@ -11,6 +11,7 @@ export default function Filter() {
 
     // Obtain state from context
     const { state, dispatch } = useContext(Context);
+    console.log(state.filter)
 
     // Styles
     const filterIcon = !state.filterIconVisible && 'hidden';
@@ -98,8 +99,8 @@ export default function Filter() {
                 </section>
                 <hr className='border-[#8a8a8a] mt-4 mx-8' />
                 <section className='flex'>
-                    <div onClick={() => applyFilter(filterInputs, state, dispatch)} className='menu-button px-3 py-1'>Apply</div>
-                    <div onClick={() => clearFilter(filterInputs)} className='menu-button px-3 py-1 ml-4'>Clear</div>
+                    <div onClick={() => applyFilter(filterInputs, dispatch)} className='menu-button px-3 py-1'>Apply</div>
+                    <div onClick={() => clearFilter(dispatch)} className='menu-button px-3 py-1 ml-4'>Clear</div>
                 </section>
             </div>
         </div>
@@ -108,9 +109,6 @@ export default function Filter() {
 }
 
 // To Do:
-// 1. Connect to state to apply filters to map, clear checks on select of 'Apply'
-// 1b. BUG?: On apply, first click doesnt update state?
-// 2. Optional: if options are selected and user closes window with 'X', deselect? <- this caused some bugs when initially tested.
-// 3. On clear, update filter state to be as default to remove filter. Dont uncheck inputs (?), user can do that manually?
-// 4. Double check filter component, make sure eveything is good before closing this section.
-// 5. Move the default map location of Utah (on load) slightly up to accomodate mobile viewports and look better on desktop.
+// 1. Connect to map update.
+// 2. Double check filter component, make sure eveything is good before closing this section.
+// 3. Move the default map location of Utah (on load) slightly up to accomodate mobile viewports and look better on desktop.

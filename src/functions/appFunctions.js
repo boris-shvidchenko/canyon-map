@@ -32,22 +32,19 @@ function updateContactFormData(dispatch, state, event) {
 }
 
 // Clear filter
-function clearFilter(list) {
-    list.forEach(i => {
-        if (i.current.checked) i.current.checked = false;
-    })
+function clearFilter(dispatch) {
+    dispatch({ type: 'updateFilter', filter: {tech: null, water: null, time: null}});
 }
 
 // Apply filter
-function applyFilter(list, state, dispatch) {
-
+function applyFilter(list, dispatch) {
     const techInput =  list[0].current.checked ? '2' : list[1].current.checked ? '3' : list[2].current.checked ? '4' : null;
     const waterInput = list[3].current.checked ? 'A' : list[4].current.checked ? 'B' : list[5].current.checked ? 'C' : null;
     const timeInput = list[6].current.checked ? 'I' : list[7].current.checked ? 'II' : list[8].current.checked ? 'III' : list[9].current.checked ? 'IV' : list[10].current.checked ? 'V' : list[11].current.checked ? 'VI' : null;
-
     dispatch({ type: 'updateFilter', filter: {tech: techInput, water: waterInput, time: timeInput}});
-
-    console.log(state.filter)
+    list.forEach(i => {
+        if (i.current.checked) i.current.checked = false;
+    })
 }
 
 // Submit form
