@@ -98,7 +98,7 @@ export default function Filter() {
                 </section>
                 <hr className='border-[#8a8a8a] mt-4 mx-8' />
                 <section className='flex'>
-                    <div onClick={() => applyFilter(dispatch, filterInputs)} className='menu-button px-3 py-1'>Apply</div>
+                    <div onClick={() => applyFilter(state, dispatch, filterInputs)} className='menu-button px-3 py-1'>Apply</div>
                     <div onClick={() => clearFilter(state, dispatch, filterInputs)} className='menu-button px-3 py-1 ml-4'>Remove</div>
                 </section>
             </div>
@@ -108,5 +108,5 @@ export default function Filter() {
 }
 
 // To Do:
+// 1. Consider adding a modal that show what filters are active somewhere on screen? (Optional)
 // 2. Double check filter component, make sure eveything is good before closing this section.
-// 3. if in mobile view, close filter window on apply?
