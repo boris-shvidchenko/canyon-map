@@ -111,4 +111,4 @@ export default function Filter() {
 // 1. In mainmap function/filter, map gets refreshed anytime apply or clear is clicked. Only refresh when inputs are not empty/null OR when state.filter is not all null. 
 // 1b. Should I add another button or rename the 'Clear', user can get confused as to what 'clear' clears, the map filter or the input selection?
 // 2. Double check filter component, make sure eveything is good before closing this section.
-// 3. Move the default map location of Utah (on load) slightly up to accomodate mobile viewports and look better on desktop.
+// 3. Move the default map location of Utah (on load) slightly up and right to accomodate mobile viewports and look better on desktop. We should see parts of grand canyon, nevadda (vegas) and death valley.
