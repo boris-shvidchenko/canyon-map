@@ -98,8 +98,8 @@ export default function Filter() {
                 </section>
                 <hr className='border-[#8a8a8a] mt-4 mx-8' />
                 <section className='flex'>
-                    <div onClick={() => applyFilter(filterInputs, dispatch)} className='menu-button px-3 py-1'>Apply</div>
-                    <div onClick={() => clearFilter(state, dispatch)} className='menu-button px-3 py-1 ml-4'>Clear</div>
+                    <div onClick={() => applyFilter(dispatch, filterInputs)} className='menu-button px-3 py-1'>Apply</div>
+                    <div onClick={() => clearFilter(state, dispatch, filterInputs)} className='menu-button px-3 py-1 ml-4'>Remove</div>
                 </section>
             </div>
         </div>
@@ -108,5 +108,5 @@ export default function Filter() {
 }
 
 // To Do:
-// 1b. Should I add another button or rename the 'Clear', user can get confused as to what 'clear' clears, the map filter or the input selection?
 // 2. Double check filter component, make sure eveything is good before closing this section.
+// 3. if in mobile view, close filter window on apply?
