@@ -32,8 +32,10 @@ function updateContactFormData(dispatch, state, event) {
 }
 
 // Clear filter
-function clearFilter(dispatch) {
-    dispatch({ type: 'updateFilter', filter: {tech: null, water: null, time: null}});
+function clearFilter(state, dispatch) {
+    if (!Object.values(state.filter).every(i => i === null)) {
+        dispatch({ type: 'updateFilter', filter: {tech: null, water: null, time: null}});
+    }
 }
 
 // Apply filter
