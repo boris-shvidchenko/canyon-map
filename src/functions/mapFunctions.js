@@ -24,10 +24,10 @@ function createMap(state) {
             container: 'root',
             map: map,
             extent: {
-                xmin: -108.149414,
-                ymin: 36.450743,
-                xmax: -115.092773,
-                ymax: 42.19054,
+                xmin: -110.149414,
+                ymin: 34.450743,
+                xmax: -117.092773,
+                ymax: 40.19054,
                 spatialReference: 4326
             },
             // Removes the +/- widget from the map
@@ -44,8 +44,8 @@ function createMap(state) {
             map: map,
             camera: {
                 position: {
-                    x: -111.513936,
-                    y: 39.133887,
+                    x: -114.115253,
+                    y: 37.200407,
                     z: 2000000
                 }
             },
