@@ -36,10 +36,12 @@ export default function Filter() {
                 <FunnelIcon className='filter-icon' />
             </div>
             <div className={`filter-container ${filterNotVisible} ${filterVisible} ${width} ${height}`}>
+                {/* Header */}
                 <section className='filter-container-section'>
                     <p className='text-[#ff6a00]'>Add Filter</p>
                     <XMarkIcon onClick={() => toggleFilter(dispatch)} className='menu-x' />
                 </section>
+                {/* Technical rating filter */}
                 <section className='ml-8 pt-4'>
                     <p className='menu-text'>Search canyons by their ratings:</p>
                     <div className={`${gridWidth} filter-grid-div`}>
@@ -97,6 +99,7 @@ export default function Filter() {
                     </div>
                 </section>
                 <hr className='border-[#8a8a8a] mt-4 mx-8' />
+                {/* Apply/Clear buttons */}
                 <section className='flex'>
                     <div onClick={() => applyFilter(state, dispatch, filterInputs)} className='menu-button px-3 py-1'>Apply</div>
                     <div onClick={() => clearFilter(state, dispatch, filterInputs)} className='menu-button px-3 py-1 ml-4'>Remove</div>
@@ -104,5 +107,4 @@ export default function Filter() {
             </div>
         </div>
     )
-
 }
