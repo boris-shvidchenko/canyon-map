@@ -106,7 +106,3 @@ export default function Filter() {
     )
 
 }
-
-// To Do:
-// 1. Consider adding a modal that show what filters are active somewhere on screen? (Optional)
-// 2. Double check filter component, make sure eveything is good before closing this section.
